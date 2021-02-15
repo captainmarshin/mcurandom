@@ -7,12 +7,9 @@
 	<title>MCU Random - Random Title to Watch from Marvel Cinematic Universe</title>
 	
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-title" content="MCU Random">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<!-- <meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="viewport" content="width=device-width, viewport-fit=cover">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
 	<meta name="title" content="MCU Random - Random Title to Watch from Marvel Cinematic Universe">
 	<meta name="description" content="With MCU Random you can choose what title from Marvel Cinematic Universe watch right now!">
 
@@ -30,18 +27,18 @@
 	<meta property="twitter:description" content="With MCU Random you can choose what title from Marvel Cinematic Universe watch right now!">
 	<meta property="twitter:image" content=" ">
 
-	<link rel="apple-touch-icon" sizes="180x180" href=" ">
-	<link rel="icon" type="image/png" sizes="32x32" href=" ">
-	<link rel="icon" type="image/png" sizes="16x16" href=" ">
-	<link rel="manifest" href=" ">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/app/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/app/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/app/favicon-16x16.png">
+	<link rel="manifest" href="images/app/site.webmanifest">
 
 	<style type="text/css">
 		*{
 			-webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: -moz-none;
-    -o-user-select: none;
-    user-select: none;
+    	-khtml-user-select: none;
+    	-moz-user-select: -moz-none;
+   	 	-o-user-select: none;
+    	user-select: none;
 		}
 
 		html{ 
@@ -72,17 +69,18 @@
 
 		.UIAppWindow1{
 			position: fixed;
-    		bottom: 0;
-    		width: 100%;
+    	bottom: 0;
+    	width: 100%;
 			height: 100%;
 			z-index: 1;
 			background-image: url('UIWindowBackground.png');
-					}
+			display: none;
+			}
 
 		.UIAppWindow{
 			height: 95%;
 			margin-top: 15%;
-			background-color: #E4E4E4;
+			background-color: #333333;
 			border-radius: 15px 15px 0px 0px;
 		}
 
@@ -90,23 +88,20 @@
 			padding-top: 20px;
 			margin-left: 20px;
 			margin-right: 20px;
-			border: 1px solid red;
+			/*border: 1px solid red;*/
 		}
 
 		.UIAppWindowHeader{
 			height: 50px;
-			border: 1px solid blue;
 		}
 
 		.UIAppWindowContent{
-			height: 720px;
+			height: calc(100vh - 130px);
    			overflow-y: scroll;
   			overflow-x: hidden;
   			-ms-overflow-style: none;
   			scrollbar-width: none;
   			-webkit-overflow-scrolling: touch;
-		
-   			border: 1px solid white;
 		}
 
 		.UIAppWindowContent::-webkit-scrollbar {
@@ -170,11 +165,24 @@
 		}
 
 
-		.UIAppFiltersBlock, .UIAppButtonBlock, .UIAppResult{
+		.UIAppButtonBlock{
+			text-align: center;
+			margin-top: 60px;
+			margin-bottom: 40px;
+		}
+
+		.UIAppResult{
+			text-align: center;
+			margin-top: 60px;
+			margin-bottom: 40px;
+		}
+
+
+		.UIAppFiltersBlock{
 			text-align: center;
 			margin-top: 30px;
-			margin-bottom: 30px;
-		}
+			margin-bottom: 60px;
+		} 
 
 
 		.UIAppFilter{
@@ -183,8 +191,10 @@
 			height: 30px;
 			/*border: 1px solid red;*/
 			display: inline-block;
-			padding: 0;
+			padding-left: 15px;
+			padding-right: 15px;
 			margin-bottom: 10px;
+			line-height: 29px;
 		}
 
 		.UIAppFilter:hover{
@@ -203,7 +213,6 @@
 		}
 
 		input[type='checkbox']{
-			vertical-align: middle;
 			cursor: pointer; 
 		}
 
@@ -212,22 +221,17 @@
 		}
 
 		.UIAppFilter_Box{
-			margin: 0;
-			padding-top: 5px;
-			padding-bottom: 5px;
+			padding: -1px;
 			/*border: 1px solid blue;*/
 			display: inline-block;
-			padding-left: 10px;
+			text-align: center;
 		}
+
 		.UIAppFilter_Name{
-			margin: 0;
 			font-size: 9pt;
-			padding-top: 5px;
-			padding-bottom: 5px;
-			/*border: 1px solid blue;*/
+			/*border: 1px solid green;*/
 			display: inline-block;
 			color: #000;
-			padding-right: 12px;
 		}
 
 		.UIApp_TitleCard{
@@ -259,7 +263,7 @@
 		}
 
 		.UIAppLogo{
-			margin-bottom: 30px;
+			margin-bottom: 40px;
 			text-align: center;
 		}
 
@@ -271,15 +275,121 @@
 			height: 30px;
 		}
 
+		.UIAppIntroTextForFilters{
+			margin-top: 60px;
+		}
+
+		.UIAppMenu{
+			width: 30px;
+			height: 30px;
+			top: 0;
+			right: 0;
+			margin-top: 10%;
+			margin-right: 5%;
+			position: absolute;
+			color: #000;
+			font-weight: 600;
+			background-color: #FFF;
+			border-radius: 50%;
+			font-size: 11pt;
+			line-height: 30px;
+			cursor: pointer;
+			display: block;
+		}
+
+		.UIAppMenu:hover, UIAppMenu:active{
+			cursor: pointer;
+		}
+
+		/*.stopscroll{
+			overflow-x:hidden;    	
+			overflow-y:hidden;
+		}*/
+
+		body.stopscroll{
+    	overflow-x:hidden;    	
+			overflow-y:hidden;
+		}
+
+		.enablescroll{
+			overflow-y: scroll;
+		}
+
+		.backscroll{
+			overflow-x:auto;    	
+			overflow-y:scroll;
+		}
+
+		.UIAppWindow_Close{
+			width: 30px;
+			height: 30px;
+			float: right;
+			color: #000;
+			font-weight: 600;
+			background-color: #FFF;
+			border-radius: 50%;
+			font-size: 11pt;
+			line-height: 30px;
+			cursor: pointer;
+			text-align: center;
+		}
+
 	</style>
 </head>
 <body>
 
+<!-- 
+Fuction to remove Selected Filters after Result Random is done.
+After Random if Filters was selected - make random and after Unselect filters.
 
-	<div class="UIAppMarkup">
+What to do:
+Test with Random (maybe set timer, and after remove filters ?)
+-->
+<script>
+
+	function TestUn() {
+	if(document.getElementById('test1').checked){
+		document.getElementById('test1').click();
+		console.log("Selected filter unchecked");
+	} else {
+		console.log("Selected filter not-selected");
+	}
+}
+
+</script>
+
+<script>
+
+	function TestMenu() {
+	document.getElementById('testmenu').style.display = "block";
+	document.getElementById('testmenubtn').style.display = "none";
+	var mw = document.body;
+	mw.className += " stopscroll";
+	document.body.style.overflow = "hidden";
+
+	var mwc = getElementById('testmenucont');
+	mwc.className += " enablescroll";
+}
+
+</script>
+
+<script>
+
+function TestMenuClose() {
+	document.getElementById('testmenu').style.display = "none";
+	document.getElementById('testmenubtn').style.display = "block";
+	document.body.style.overflow = "scroll";
+	}
+
+</script>
+<!-- ------------------------------------------------------------------------ -->
+
+
+	<div class="UIAppMarkup" id="testmenumw">
 
 		<div class="UIAppLogo">
-			<img class="UIAppLogo_Image" src="images/app/logotext30.png">
+			<img class="UIAppLogo_Image" src="images/app/logo-text.jpg">
+			<div class="UIAppMenu" id="testmenubtn" onclick="TestMenu();">?</div>
 		</div>
 
 		<div class="UIAppTextLabel">
@@ -288,21 +398,21 @@
 			<div class="UIAppIntroText_Text">Random from 23 movies, 5 one-shots, 5 web-serials and 12 TV shows (inluded random for each episode)</div>
 		</div>
 
-		<!-- <div class="UIAppResult">
+		<div class="UIAppResult">
 			<div class="UIApp_TitleCard">
 				<div class="UIApp_TitleCard_Poster"><img class="UIApp_TitleCard_PosterImage" src="images/tv/wandavision_s1.jpeg"></div>
 				<div class="UIApp_TitleCard_Category">WandaVision</div>
 				<div class="UIApp_TitleCard_Name">Filmed Before a Live Studio Audience</div>
 				<div class="UIApp_TitleCard_SE">Season 1, Episode 1</div>
 			</div>
-		</div> -->
+		</div>
 
 		<div class="UIAppButtonBlock">
-			<button>Start Random</button>
+			<button onclick="TestUn();">Start Random</button>
 		</div>
 
 		<div class="UIAppTextLabel">
-			<div>Activate different filters for new randoms!</div>
+			<div class="UIAppIntroTextForFilters">Activate different filters for new randoms!</div>
 		</div>
 
 		<div class="UIAppFiltersBlock">
@@ -328,63 +438,76 @@
 
 			<div class="UIAppFilter">
 				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test5"></div>
-				<div class="UIAppFilter_Name"><label for="test5">Hello world</label></div>
+				<div class="UIAppFilter_Name"><label for="test5">Only Movies</label></div>
 			</div>
 
 			<div class="UIAppFilter">
 				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test6"></div>
-				<div class="UIAppFilter_Name"><label for="test6">Hello world</label></div>
+				<div class="UIAppFilter_Name"><label for="test6">Only One-Shots</label></div>
 			</div>
 
 			<div class="UIAppFilter">
 				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test7"></div>
-				<div class="UIAppFilter_Name"><label for="test7">Hello world</label></div>
+				<div class="UIAppFilter_Name"><label for="test7">Only TV Shows (Without Seasons & Series)</label></div>
 			</div>
 
 			<div class="UIAppFilter">
 				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test8"></div>
-				<div class="UIAppFilter_Name"><label for="test8">Hello world</label></div>
+				<div class="UIAppFilter_Name"><label for="test8">Only TV Shows (Include Seasons & Series)</label></div>
 			</div>
 
 			<div class="UIAppFilter">
 				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test9"></div>
-				<div class="UIAppFilter_Name"><label for="test9">Hello world</label></div>
+				<div class="UIAppFilter_Name"><label for="test9">Only TV Shows (Only Seasons)</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test9"></div>
+				<div class="UIAppFilter_Name"><label for="test9">Add NO-MCU Titles</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test9"></div>
+				<div class="UIAppFilter_Name"><label for="test9">Only NO-MCU Titles</label></div>
 			</div>
 		</div>
 
-			<div class="UIAppTextTitle">Hello world!</div>
-			<div class="UIAppTextParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-
-			<div class="UIAppTextTitle">Hello world!</div>
-			<div class="UIAppTextParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-
-			<div class="UIAppTextTitle">Hello world!</div>
-			<div class="UIAppTextParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			
 	</div>
 
-	<!-- <div class="UIAppWindow1">
+	<div class="UIAppWindow1" id="testmenu">
 		<div class="UIAppWindow">
 			<div class="UIAppWindowMarkup">
-				<div class="UIAppWindowHeader"></div>
-				<div class="UIAppWindowContent"></div>
+				<div class="UIAppWindowHeader"><div class="UIAppTextTitle">Tips, Help & About<span onclick="TestMenuClose();" class="UIAppWindow_Close">X</span></div></div>
+				<div class="UIAppWindowContent" id="testmenucont">
+					<div class="UIAppTextTitle">Hello world!</div>
+					<div class="UIAppTextParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+					<div class="UIAppTextTitle">Hello world!</div>
+					<div class="UIAppTextParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+					<div class="UIAppTextTitle">Hello world!</div>
+					<div class="UIAppTextParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+					<br><br><br>
+				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
 </body>
 </html>
