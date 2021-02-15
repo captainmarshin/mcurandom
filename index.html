@@ -54,6 +54,10 @@
 			font-family: sans-serif;
 		}
 
+		.body::-webkit-scrollbar {
+ 			display: none;
+		}
+
 		.UIAppMarkup{
 			margin-top: 10%;
 			margin-left: 5%;
@@ -78,10 +82,12 @@
 			}
 
 		.UIAppWindow{
-			height: 95%;
-			margin-top: 15%;
+			height: 98%;
+			margin-top: 5%;
 			background-color: #333333;
 			border-radius: 15px 15px 0px 0px;
+			animation-name: AppWindowAnimation;
+  		animation-duration: 0.2s;
 		}
 
 		.UIAppWindowMarkup{
@@ -167,18 +173,20 @@
 
 		.UIAppButtonBlock{
 			text-align: center;
-			margin-top: 60px;
+			margin-top: 40px;
 			margin-bottom: 40px;
 		}
 
 		.UIAppResult{
 			text-align: center;
-			margin-top: 60px;
+			margin-top: 40px;
 			margin-bottom: 40px;
+			display: none;
 		}
 
 
 		.UIAppFiltersBlock{
+			display: none;
 			text-align: center;
 			margin-top: 30px;
 			margin-bottom: 60px;
@@ -334,9 +342,134 @@
 			text-align: center;
 		}
 
+		.UIAppFilters_Button{
+			text-align: center;
+			font-size: 11pt;
+			margin-bottom: 30px;
+			/*margin-left: 20px;
+			margin-right: 20px;*/
+			font-weight: 400;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+
+		.UIAppHelp_Button{
+			text-align: center;
+			font-size: 11pt;
+			margin-bottom: 30px;
+			/*margin-left: 20px;
+			margin-right: 20px;*/
+			font-weight: 400;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+
+		.UIAppIntro_Page{
+			margin-top: 15%;
+		}
+
+@keyframes AppWindowAnimation {
+1%	{margin-top: 130%}
+2%	{margin-top: 99%}
+3%	{margin-top: 98%}
+4%	{margin-top: 97%}
+5%	{margin-top: 96%}
+6%	{margin-top: 95%}
+7%	{margin-top: 94%}
+8%	{margin-top: 93%}
+9%	{margin-top: 92%}
+10%	{margin-top: 91%}
+11%	{margin-top: 90%}
+12%	{margin-top: 89%}
+13%	{margin-top: 88%}
+14%	{margin-top: 87%}
+15%	{margin-top: 86%}
+16%	{margin-top: 85%}
+17%	{margin-top: 84%}
+18%	{margin-top: 83%}
+19%	{margin-top: 82%}
+20%	{margin-top: 81%}
+21%	{margin-top: 80%}
+22%	{margin-top: 79%}
+23%	{margin-top: 78%}
+24%	{margin-top: 77%}
+25%	{margin-top: 76%}
+26%	{margin-top: 75%}
+27%	{margin-top: 74%}
+28%	{margin-top: 73%}
+29%	{margin-top: 72%}
+30%	{margin-top: 71%}
+31%	{margin-top: 70%}
+32%	{margin-top: 69%}
+33%	{margin-top: 68%}
+34%	{margin-top: 67%}
+35%	{margin-top: 66%}
+36%	{margin-top: 65%}
+37%	{margin-top: 64%}
+38%	{margin-top: 63%}
+39%	{margin-top: 62%}
+40%	{margin-top: 61%}
+41%	{margin-top: 60%}
+42%	{margin-top: 59%}
+43%	{margin-top: 58%}
+44%	{margin-top: 57%}
+45%	{margin-top: 56%}
+46%	{margin-top: 55%}
+47%	{margin-top: 54%}
+48%	{margin-top: 53%}
+49%	{margin-top: 52%}
+50%	{margin-top: 51%}
+51%	{margin-top: 50%}
+52%	{margin-top: 49%}
+53%	{margin-top: 48%}
+54%	{margin-top: 47%}
+55%	{margin-top: 46%}
+56%	{margin-top: 45%}
+57%	{margin-top: 44%}
+58%	{margin-top: 43%}
+59%	{margin-top: 42%}
+60%	{margin-top: 41%}
+61%	{margin-top: 40%}
+62%	{margin-top: 39%}
+63%	{margin-top: 38%}
+64%	{margin-top: 37%}
+65%	{margin-top: 36%}
+66%	{margin-top: 35%}
+67%	{margin-top: 34%}
+68%	{margin-top: 33%}
+69%	{margin-top: 32%}
+70%	{margin-top: 31%}
+71%	{margin-top: 30%}
+72%	{margin-top: 29%}
+73%	{margin-top: 28%}
+74%	{margin-top: 27%}
+75%	{margin-top: 26%}
+76%	{margin-top: 25%}
+77%	{margin-top: 24%}
+78%	{margin-top: 23%}
+79%	{margin-top: 22%}
+80%	{margin-top: 21%}
+81%	{margin-top: 20%}
+82%	{margin-top: 19%}
+83%	{margin-top: 18%}
+84%	{margin-top: 17%}
+85%	{margin-top: 16%}
+86%	{margin-top: 15%}
+87%	{margin-top: 14%}
+88%	{margin-top: 13%}
+89%	{margin-top: 12%}
+90%	{margin-top: 11%}
+91%	{margin-top: 10%}
+92%	{margin-top: 9%}
+93%	{margin-top: 8%}
+94%	{margin-top: 7%}
+95%	{margin-top: 6%}
+100%	{margin-top: 5%}
+}
+
 	</style>
 </head>
-<body>
+<body onload="EasterEgg();">
 
 <!-- 
 Fuction to remove Selected Filters after Result Random is done.
@@ -382,23 +515,96 @@ function TestMenuClose() {
 	}
 
 </script>
+
+<script>
+
+function Filters() {
+		var AppFiltersBlock = document.getElementById("AppFiltersBlock");
+  	if (AppFiltersBlock.style.display === "block") {
+    		AppFiltersBlock.style.display = "none";
+  	} else {
+    	AppFiltersBlock.style.display = "block";
+  	}
+}
+
+</script>
+
+
+<script>
+
+	function EasterEgg() {
+  	var phrases = [ 
+  	"Only mighty can lift this hammer!",
+		"Good morning, sir",
+		"Hey Everyone",
+		"Hey Guys! Wait a minute...",
+		"Suit up!",
+		"I'am a boss, I'am a boss, I'am a boss,",
+		"SMASH!!",
+		"Avengers!...",
+		"...Assemble",
+		"I am Groot",
+		"Hail Hydra",
+		"Welcome to level 7!",
+		"Yibambe!",
+		"Just like Budapest all over again",
+		"Before we get started...",
+		"Peace in our time",
+		"No strings on me",
+		"Perfectly balanced",
+		"Language",
+		"Nice ears",
+		"I can do this all day",
+		"I am Danny Rand, ...",
+		"There was an idea...",
+		"It's a magical place",
+		"On your left!",
+		"Teach me!",
+		"We have a Hulk",
+		"What the fu...",
+		"You didn't see that coming?",
+		"Together",
+		"Genius, Billionaire, Playboy, Philanthropist",
+		"*Wakanda Forever*",
+		"*Snap*"];
+  	var randomphrases = Math.floor(Math.random() * phrases.length);
+  	var chance = Math.random();
+
+  	if (chance < 0.15) {
+  			document.getElementById('AppEasterEgg').innerHTML = phrases[randomphrases];
+  			console.log("It's work!");
+  		}
+ 	}
+
+</script>
+
+<script>
+	function AppShowResult() {
+		document.getElementById('AppIntroText').style.display = "none";
+		document.getElementById('AppResult').style.display = "block";
+	}
+</script>
+
+
 <!-- ------------------------------------------------------------------------ -->
 
 
 	<div class="UIAppMarkup" id="testmenumw">
 
-		<div class="UIAppLogo">
+		<div class="UIAppLogo UIAppIntro_Page">
 			<img class="UIAppLogo_Image" src="images/app/logo-text.jpg">
-			<div class="UIAppMenu" id="testmenubtn" onclick="TestMenu();">?</div>
+			<!-- <div class="UIAppMenu" id="testmenubtn" onclick="TestMenu();">?</div> - HELP BUTTON --> 
 		</div>
 
-		<div class="UIAppTextLabel">
+		<div class="UIAppTextLabel" id="AppIntroText">
 			<div class="UIAppIntroText_Text">Welcome to MCU Random!</div>
 			<div class="UIAppIntroText_Text">This app help your to choose what to watch today!</div>
 			<div class="UIAppIntroText_Text">Random from 23 movies, 5 one-shots, 5 web-serials and 12 TV shows (inluded random for each episode)</div>
 		</div>
 
-		<div class="UIAppResult">
+		<!-- RESULT OF RANDOM BLOCK -->
+
+		<div class="UIAppResult" id="AppResult">
 			<div class="UIApp_TitleCard">
 				<div class="UIApp_TitleCard_Poster"><img class="UIApp_TitleCard_PosterImage" src="images/tv/wandavision_s1.jpeg"></div>
 				<div class="UIApp_TitleCard_Category">WandaVision</div>
@@ -408,14 +614,16 @@ function TestMenuClose() {
 		</div>
 
 		<div class="UIAppButtonBlock">
-			<button onclick="TestUn();">Start Random</button>
+			<button onclick="TestUn(); AppShowResult();"><span id="AppEasterEgg">Start Random</span></button>
 		</div>
 
-		<div class="UIAppTextLabel">
+		<div class="UIAppFilters_Button" onclick="Filters();">You can activate different filters to new randoms!</div>
+
+<!-- 		<div class="UIAppTextLabel">
 			<div class="UIAppIntroTextForFilters">Activate different filters for new randoms!</div>
-		</div>
+		</div> -->
 
-		<div class="UIAppFiltersBlock">
+		<div class="UIAppFiltersBlock" id="AppFiltersBlock">
 			<div class="UIAppFilter">
 				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test1"></div>
 				<div class="UIAppFilter_Name"><label for="test1">Without Seasons & Episodes</label></div>
@@ -472,13 +680,18 @@ function TestMenuClose() {
 			</div>
 		</div>
 
+		<div class="UIAppHelp_Button" id="testmenubtn" onclick="TestMenu();">Help, Tips & About</div>
+
 			
 	</div>
+
+
+	<!-- WINDOWS  -->
 
 	<div class="UIAppWindow1" id="testmenu">
 		<div class="UIAppWindow">
 			<div class="UIAppWindowMarkup">
-				<div class="UIAppWindowHeader"><div class="UIAppTextTitle">Tips, Help & About<span onclick="TestMenuClose();" class="UIAppWindow_Close">X</span></div></div>
+				<div class="UIAppWindowHeader" onclick="TestMenuClose();"><div class="UIAppTextTitle">Tips, Help & About<span class="UIAppWindow_Close">X</span></div></div>
 				<div class="UIAppWindowContent" id="testmenucont">
 					<div class="UIAppTextTitle">Hello world!</div>
 					<div class="UIAppTextParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
