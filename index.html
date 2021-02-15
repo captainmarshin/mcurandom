@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<!-- Primary Meta Tags -->
+	<title>MCU Random - Random Title to Watch from Marvel Cinematic Universe</title>
+	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover'">
+	<meta name="apple-mobile-web-app-title" content="MCU Random">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+	<meta name="title" content="MCU Random - Random Title to Watch from Marvel Cinematic Universe">
+	<meta name="description" content="With MCU Random you can choose what title from Marvel Cinematic Universe watch right now!">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content=" ">
+	<meta property="og:title" content="MCU Random - Random Title to Watch from Marvel Cinematic Universe">
+	<meta property="og:description" content="With MCU Random you can choose what title from Marvel Cinematic Universe watch right now!">
+	<meta property="og:image" content=" ">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content=" ">
+	<meta property="twitter:title" content="MCU Random - Random Title to Watch from Marvel Cinematic Universe">
+	<meta property="twitter:description" content="With MCU Random you can choose what title from Marvel Cinematic Universe watch right now!">
+	<meta property="twitter:image" content=" ">
+
+	<link rel="apple-touch-icon" sizes="180x180" href=" ">
+	<link rel="icon" type="image/png" sizes="32x32" href=" ">
+	<link rel="icon" type="image/png" sizes="16x16" href=" ">
+	<link rel="manifest" href=" ">
+
+	<style type="text/css">
+		*{
+			-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+		}
+
+		html{ 
+		}
+
+		body{
+			margin: 0;
+			padding: 0;
+			background-color: #000000;
+			background-image: url('images/app/background.jpg');
+			background-repeat: no-repeat;
+			color: #FFFFFF;
+			font-family: sans-serif;
+		}
+
+		.UIAppMarkup{
+			margin-top: 10%;
+			margin-left: 5%;
+			margin-right: 5%;
+			margin-bottom: 10%;
+
+			/*border: 1px solid white;*/
+		}
+
+
+
+		/* APP WINDOW*/
+
+		.UIAppWindow1{
+			position: fixed;
+    		bottom: 0;
+    		width: 100%;
+			height: 100%;
+			z-index: 1;
+			background-image: url('UIWindowBackground.png');
+					}
+
+		.UIAppWindow{
+			height: 95%;
+			margin-top: 15%;
+			background-color: #E4E4E4;
+			border-radius: 15px 15px 0px 0px;
+		}
+
+		.UIAppWindowMarkup{
+			padding-top: 20px;
+			margin-left: 20px;
+			margin-right: 20px;
+			border: 1px solid red;
+		}
+
+		.UIAppWindowHeader{
+			height: 50px;
+			border: 1px solid blue;
+		}
+
+		.UIAppWindowContent{
+			height: 720px;
+   			overflow-y: scroll;
+  			overflow-x: hidden;
+  			-ms-overflow-style: none;
+  			scrollbar-width: none;
+  			-webkit-overflow-scrolling: touch;
+		
+   			border: 1px solid white;
+		}
+
+		.UIAppWindowContent::-webkit-scrollbar {
+ 			display: none;
+		}
+
+		button{
+			background-color: #E7001C; 
+			padding: 13px 18px 13px 18px; 
+			min-width: 250px; 
+			border: 0;
+			border-radius: 8pt; 
+			color: #FFFFFF; 
+			font-size: 10.5pt;
+			font-weight: 500;
+			cursor: pointer; 
+		}
+
+		button:hover{
+			background-color: #F1001C;
+			cursor: pointer; 
+		}
+
+		button:active{
+			background-color: #DD001C;
+			cursor: pointer; 
+		}
+
+/*		.UIAppFilter{
+			background-color: #FFFFFF; 
+			width: auto; 
+			padding: 5px;
+			color: black;
+			font-size: 9pt;
+			font-weight: 500;
+			border-radius: 12pt; 
+			display: inline-block; 
+			margin-bottom: 10px;*/
+
+		
+
+		.UIAppTextLabel{
+			text-align: center;
+			font-size: 11pt;
+			margin-bottom: 30px;
+			/*margin-left: 20px;
+			margin-right: 20px;*/
+			font-weight: 400;
+		}
+
+		.UIAppTextTitle{
+			font-size: 13pt;
+			font-weight: 600;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.UIAppTextParagraph{
+			font-size: 11pt;
+			font-weight: 400pt;
+		}
+
+
+		.UIAppFiltersBlock, .UIAppButtonBlock, .UIAppResult{
+			text-align: center;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+
+
+		.UIAppFilter{
+			background-color: #FFFFFF;
+			border-radius: 12pt; 
+			height: 30px;
+			/*border: 1px solid red;*/
+			display: inline-block;
+			padding: 0;
+			margin-bottom: 10px;
+		}
+
+		.UIAppFilter:hover{
+			background-color: #F0F0F0;
+			cursor: pointer; 
+		}
+
+		.UIAppFilter:active{
+			background-color: #F0F0F0;
+			cursor: pointer; 
+		}
+
+		label, label:hover, label:active{
+			word-break: break-word;
+			cursor: pointer; 
+		}
+
+		input[type='checkbox']{
+			vertical-align: middle;
+			cursor: pointer; 
+		}
+
+		.UIAppFilter:checked{
+			border: 2px solid #E7001C;
+		}
+
+		.UIAppFilter_Box{
+			margin: 0;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			/*border: 1px solid blue;*/
+			display: inline-block;
+			padding-left: 10px;
+		}
+		.UIAppFilter_Name{
+			margin: 0;
+			font-size: 9pt;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			/*border: 1px solid blue;*/
+			display: inline-block;
+			color: #000;
+			padding-right: 12px;
+		}
+
+		.UIApp_TitleCard{
+
+		}
+
+		.UIApp_TitleCard_Poster{
+			margin-bottom: 20px;
+		}
+
+		.UIApp_TitleCard_PosterImage{
+			width: 200px;
+			height: 295px;
+			border-radius: 7px;
+			border: 1px solid #222222;
+		}
+
+		.UIApp_TitleCard_Category{
+			font-size: 11pt;
+		}
+
+		.UIApp_TitleCard_Name{
+			font-size: 14pt; 
+			font-weight: 600;
+		}
+
+		.UIApp_TitleCard_SE{
+			font-size: 11pt;
+		}
+
+		.UIAppLogo{
+			margin-bottom: 30px;
+			text-align: center;
+		}
+
+		.UIAppIntroText_Text{
+			margin-bottom: 7px;
+		}
+
+	</style>
+</head>
+<body>
+
+
+	<div class="UIAppMarkup">
+
+		<div class="UIAppLogo">
+			<img src="images/app/logotext30.jpg">
+		</div>
+
+		<div class="UIAppTextLabel">
+			<div class="UIAppIntroText_Text">Welcome to MCU Random!</div>
+			<div class="UIAppIntroText_Text">This app help your to choose what to watch today!</div>
+			<div class="UIAppIntroText_Text">Random from 23 movies, 5 one-shots, 5 web-serials and 12 TV shows (inluded random for each episode)</div>
+		</div>
+
+		<!-- <div class="UIAppResult">
+			<div class="UIApp_TitleCard">
+				<div class="UIApp_TitleCard_Poster"><img class="UIApp_TitleCard_PosterImage" src="images/tv/wandavision_s1.jpeg"></div>
+				<div class="UIApp_TitleCard_Category">WandaVision</div>
+				<div class="UIApp_TitleCard_Name">Filmed Before a Live Studio Audience</div>
+				<div class="UIApp_TitleCard_SE">Season 1, Episode 1</div>
+			</div>
+		</div> -->
+
+		<div class="UIAppButtonBlock">
+			<button>Start Random</button>
+		</div>
+
+		<div class="UIAppTextLabel">
+			<div>Activate different filters for new randoms!</div>
+		</div>
+
+		<div class="UIAppFiltersBlock">
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test1"></div>
+				<div class="UIAppFilter_Name"><label for="test1">Without Seasons & Episodes</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test2"></div>
+				<div class="UIAppFilter_Name"><label for="test2">Without Web Series</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test3"></div>
+				<div class="UIAppFilter_Name"><label for="test3">Without TV Shows</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test4"></div>
+				<div class="UIAppFilter_Name"><label for="test4">Without One-Shots</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test5"></div>
+				<div class="UIAppFilter_Name"><label for="test5">Hello world</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test6"></div>
+				<div class="UIAppFilter_Name"><label for="test6">Hello world</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test7"></div>
+				<div class="UIAppFilter_Name"><label for="test7">Hello world</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test8"></div>
+				<div class="UIAppFilter_Name"><label for="test8">Hello world</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test9"></div>
+				<div class="UIAppFilter_Name"><label for="test9">Hello world</label></div>
+			</div>
+		</div>
+
+			<div class="UIAppTextTitle">Hello world!</div>
+			<div class="UIAppTextParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+			<div class="UIAppTextTitle">Hello world!</div>
+			<div class="UIAppTextParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+			<div class="UIAppTextTitle">Hello world!</div>
+			<div class="UIAppTextParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	</div>
+
+	<!-- <div class="UIAppWindow1">
+		<div class="UIAppWindow">
+			<div class="UIAppWindowMarkup">
+				<div class="UIAppWindowHeader"></div>
+				<div class="UIAppWindowContent"></div>
+			</div>
+		</div>
+	</div> -->
+
+</body>
+</html>
