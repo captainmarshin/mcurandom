@@ -63,8 +63,12 @@
 			margin-left: 5%;
 			margin-right: 5%;
 			margin-bottom: 10%;
-
 			/*border: 1px solid white;*/
+		}
+
+		.UIAppIntroPage{
+			position: relative;
+  transform: translateY(15vh);
 		}
 
 
@@ -77,7 +81,7 @@
     	width: 100%;
 			height: 100%;
 			z-index: 1;
-			background-image: url('UIWindowBackground.png');
+			background-image: url('images/app/UIWindowBackground.png');
 			display: none;
 			}
 
@@ -177,11 +181,14 @@
 			margin-bottom: 40px;
 		}
 
+		.UIAppResultPage{
+			display: none;
+		}
+
 		.UIAppResult{
 			text-align: center;
 			margin-top: 40px;
 			margin-bottom: 40px;
-			display: none;
 		}
 
 
@@ -580,7 +587,7 @@ function Filters() {
 
 <script>
 	function AppShowResult() {
-		document.getElementById('AppIntroText').style.display = "none";
+		document.getElementById('AppIntroPage').style.display = "none";
 		document.getElementById('AppResult').style.display = "block";
 	}
 </script>
@@ -591,33 +598,25 @@ function Filters() {
 
 	<div class="UIAppMarkup" id="testmenumw">
 
+
+		<div class="UIAppIntroPage" id="AppIntroPage">
+
 		<div class="UIAppLogo UIAppIntro_Page">
 			<img class="UIAppLogo_Image" src="images/app/logo-text.jpg">
 			<!-- <div class="UIAppMenu" id="testmenubtn" onclick="TestMenu();">?</div> - HELP BUTTON --> 
 		</div>
 
-		<div class="UIAppTextLabel" id="AppIntroText">
+		<div class="UIAppTextLabel">
 			<div class="UIAppIntroText_Text">Welcome to MCU Random!</div>
 			<div class="UIAppIntroText_Text">This app help your to choose what to watch today!</div>
 			<div class="UIAppIntroText_Text">Random from 23 movies, 5 one-shots, 5 web-serials and 12 TV shows (inluded random for each episode)</div>
-		</div>
-
-		<!-- RESULT OF RANDOM BLOCK -->
-
-		<div class="UIAppResult" id="AppResult">
-			<div class="UIApp_TitleCard">
-				<div class="UIApp_TitleCard_Poster"><img class="UIApp_TitleCard_PosterImage" src="images/tv/wandavision_s1.jpeg"></div>
-				<div class="UIApp_TitleCard_Category">WandaVision</div>
-				<div class="UIApp_TitleCard_Name">Filmed Before a Live Studio Audience</div>
-				<div class="UIApp_TitleCard_SE">Season 1, Episode 1</div>
-			</div>
 		</div>
 
 		<div class="UIAppButtonBlock">
 			<button onclick="TestUn(); AppShowResult();"><span id="AppEasterEgg">Start Random</span></button>
 		</div>
 
-		<div class="UIAppFilters_Button" onclick="Filters();">You can activate different filters to new randoms!</div>
+		<div class="UIAppFilters_Button" onclick="Filters();">Show Filters</div>
 
 <!-- 		<div class="UIAppTextLabel">
 			<div class="UIAppIntroTextForFilters">Activate different filters for new randoms!</div>
@@ -678,10 +677,104 @@ function Filters() {
 				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test9"></div>
 				<div class="UIAppFilter_Name"><label for="test9">Only NO-MCU Titles</label></div>
 			</div>
+
 		</div>
 
 		<div class="UIAppHelp_Button" id="testmenubtn" onclick="TestMenu();">Help, Tips & About</div>
 
+	</div>
+
+		<!-- RESULT OF RANDOM BLOCK -->
+
+		<div class="UIAppResultPage" id="AppResult">
+
+			<div class="UIAppLogo UIAppIntro_Page">
+			<img class="UIAppLogo_Image" src="images/app/logo-text.jpg">
+			<!-- <div class="UIAppMenu" id="testmenubtn" onclick="TestMenu();">?</div> - HELP BUTTON --> 
+		</div>
+
+		<div class="UIAppResult">
+			<div class="UIApp_TitleCard">
+				<div class="UIApp_TitleCard_Poster"><img class="UIApp_TitleCard_PosterImage" src="images/tv/wandavision_s1.jpeg"></div>
+				<div class="UIApp_TitleCard_Category">WandaVision</div>
+				<div class="UIApp_TitleCard_Name">Filmed Before a Live Studio Audience</div>
+				<div class="UIApp_TitleCard_SE">Season 1, Episode 1</div>
+			</div>
+		</div>
+
+				<div class="UIAppButtonBlock">
+			<button onclick="TestUn(); AppShowResult();"><span id="AppEasterEgg">Start Random</span></button>
+		</div>
+
+		<div class="UIAppFilters_Button" onclick="Filters();">Show Filters</div>
+
+<!-- 		<div class="UIAppTextLabel">
+			<div class="UIAppIntroTextForFilters">Activate different filters for new randoms!</div>
+		</div> -->
+
+		<div class="UIAppFiltersBlock" id="AppFiltersBlock">
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test1"></div>
+				<div class="UIAppFilter_Name"><label for="test1">Without Seasons & Episodes</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test2"></div>
+				<div class="UIAppFilter_Name"><label for="test2">Without Web Series</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test3"></div>
+				<div class="UIAppFilter_Name"><label for="test3">Without TV Shows</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test4"></div>
+				<div class="UIAppFilter_Name"><label for="test4">Without One-Shots</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test5"></div>
+				<div class="UIAppFilter_Name"><label for="test5">Only Movies</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test6"></div>
+				<div class="UIAppFilter_Name"><label for="test6">Only One-Shots</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test7"></div>
+				<div class="UIAppFilter_Name"><label for="test7">Only TV Shows (Without Seasons & Series)</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test8"></div>
+				<div class="UIAppFilter_Name"><label for="test8">Only TV Shows (Include Seasons & Series)</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test9"></div>
+				<div class="UIAppFilter_Name"><label for="test9">Only TV Shows (Only Seasons)</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test9"></div>
+				<div class="UIAppFilter_Name"><label for="test9">Add NO-MCU Titles</label></div>
+			</div>
+
+			<div class="UIAppFilter">
+				<div class="UIAppFilter_Box"><input type="checkbox" name="test" id="test9"></div>
+				<div class="UIAppFilter_Name"><label for="test9">Only NO-MCU Titles</label></div>
+			</div>
+
+		</div>
+
+		<div class="UIAppHelp_Button" id="testmenubtn" onclick="TestMenu();">Help, Tips & About</div>
+
+	</div>
+
+		
 			
 	</div>
 
