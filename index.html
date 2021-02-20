@@ -138,7 +138,12 @@
 /* First Page Styles */
 
 .UIAppPage_Intro {
-
+	position: absolute;
+top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
 /* Second Page Styles */
@@ -370,7 +375,7 @@
 		function AppFadeCard(card,i) {
     i = i + 0.10;
     AppFadeCard_Op(card,i);
-    	if (i<1){ setTimeout(function(){AppFadeCard(card,i);}, 1); }
+    	if (i<1){ setTimeout(function(){AppFadeCard(card,i);}, 5); }
 		}
 
 		function AppFadeCard_Op(card,i)
@@ -987,7 +992,14 @@ var OnlyWebSeries = document.getElementById('FilterOnlyWebseries').checked;
 var OnlyTV = document.getElementById('FilterOnlyTV').checked;
 var OnlyNonMCU = document.getElementById('FilterOnlyNonMCU').checked;
 
-var titles = movies.concat(oneshots,webseries,webseries_slingshot,webseries_whih,tv,tv_agentsofshield,tv_agentcarter,tv_inhumans,tv_daredevil,tv_jessicajones,tv_lukecage,tv_ironfist,tv_thedefenders,tv_thepunisher,tv_runaways,tv_cloakanddagger,tv_wandavision);
+
+// var titles = movies.concat(oneshots,webseries,webseries_slingshot,webseries_whih,tv,tv_agentsofshield,tv_agentcarter,tv_inhumans,tv_daredevil,tv_jessicajones,tv_lukecage,tv_ironfist,tv_thedefenders,tv_thepunisher,tv_runaways,tv_cloakanddagger,tv_wandavision);
+
+var chance = Math.random();
+var titles = movies.concat(oneshots,webseries,tv);
+if (chance < 0.12) {
+	var titles = movies.concat(oneshots,webseries,webseries_slingshot,webseries_whih,tv,tv_agentsofshield,tv_agentcarter,tv_inhumans,tv_daredevil,tv_jessicajones,tv_lukecage,tv_ironfist,tv_thedefenders,tv_thepunisher,tv_runaways,tv_cloakanddagger,tv_wandavision);
+}
 var result = titles[Math.floor(Math.random() * titles.length)];
 
 if (WithoutEpisodes) {
@@ -5536,9 +5548,7 @@ if (result == "NONMCUM - The New Mutants") {
 
 			<div style="clear: both"></div>
 
-		</div>
-
-		<div style="text-align: center; clear: both;">
+				<div style="text-align: center; clear: both;">
 
 		<div class="UIAppFilters_Button" onclick="AppShowFilters();" id="AppFiltersButton">Show Filters</div>
 
@@ -5587,6 +5597,8 @@ if (result == "NONMCUM - The New Mutants") {
 		<div class="UIAppHelp_Button" id="AppHelpButton">Help, Tips & About</div>
 
 	</div>
+
+		</div>
 
 	</div>
 
