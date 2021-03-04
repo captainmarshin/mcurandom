@@ -98,7 +98,6 @@
 
 .UIAppLogo {
 	text-align: center;
-	margin-bottom: 60px;
 
 
 }
@@ -108,9 +107,9 @@
 }
 
 .UIAppBlock_Text {
-	margin-top: 10%;
+	margin-top: 30px;
 	text-align: center;
-	margin-bottom: 10%;
+	margin-bottom: 30px;
 
 }
 
@@ -139,7 +138,7 @@
 
 .UIAppPage_Intro {
 	position: absolute;
-top: 50%;
+top: 48%;
     left: 50%;
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -366,22 +365,35 @@ top: 50%;
 
 	<script>
 
-		function AppFadeCard_F(){
-		var i = 0;
-		var card = document.getElementById("AppBlockResult");
-		AppFadeCard(card,i);
-		}
+		// function AppFadeCard_F(){
+		// var i = 0;
+		// var card = document.getElementById("AppBlockResult");
+		// AppFadeCard(card,i);
+		// }
 
-		function AppFadeCard(card,i) {
-    i = i + 0.10;
-    AppFadeCard_Op(card,i);
-    	if (i<1){ setTimeout(function(){AppFadeCard(card,i);}, 5); }
-		}
+		// function AppFadeCard(card,i) {
+  //   i = i + 0.10;
+  //   AppFadeCard_Op(card,i);
+  //   	if (i<1){ setTimeout(function(){AppFadeCard(card,i);}, 5); }
+		// }
 
-		function AppFadeCard_Op(card,i)
-		{
-    	card.style.opacity = i;
-		}
+		// function AppFadeCard_Op(card,i)
+		// {
+  //   	card.style.opacity = i;
+		// }
+
+		function unfade(element) {
+    	var op = 0.1;  // initial opacity
+    	element.style.display = 'block';
+    	var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+    }, 10);
+}
 
 
 		function AppShowResult() {
@@ -402,7 +414,7 @@ top: 50%;
 
 function AppMakeRandom() {
 
-AppFadeCard_F();
+	unfade(AppBlockResult);
 
 var movies = [
 
