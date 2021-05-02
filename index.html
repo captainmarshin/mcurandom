@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<!-- Primary Meta Tags -->
+	<title>MCU Random - Get random title from Marvel Cinematic Universe</title>
+	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-title" content="MCU Random">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="title" content="MCU Random - Random Title to Watch from Marvel Cinematic Universe">
+	<meta name="description" content="With MCU Random you can choose what title from Marvel Cinematic Universe watch right now!">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://mcurandom.com">
+	<meta property="og:title" content="MCU Random - Random Title to Watch from Marvel Cinematic Universe">
+	<meta property="og:description" content="With MCU Random you can choose what title from Marvel Cinematic Universe watch right now!">
+	<meta property="og:image" content=" ">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="http://mcurandom.com">
+	<meta property="twitter:title" content="MCU Random - Random Title to Watch from Marvel Cinematic Universe">
+	<meta property="twitter:description" content="With MCU Random you can choose what title from Marvel Cinematic Universe watch right now!">
+	<meta property="twitter:image" content=" ">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="images/app/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/app/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/app/favicon/favicon-16x16.png">
+	<link rel="manifest" href="images/app/favicon/site.webmanifest">
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<script src="js/func-quickrandom.js"></script>
+	<script src="js/func-randomtype0.js"></script>
+	<script src="js/func-randomtype1.js"></script>
+	<script src="js/func-randomtype2.js"></script>
+	<script src="js/func-randomtype3.js"></script>
+	<script src="js/func-randomtype4.js"></script>
+	<script src="js/func-randomtype5.js"></script>
+	<script src="js/func-randomtype6.js"></script>
+	<script src="js/func-randomtype7.js"></script>
+	<script src="js/func-randomtype8.js"></script>
+	<script src="js/func-randomtype9.js"></script>
+	<script src="js/func-randomtype10.js"></script>
+	<script src="js/func-randomtype11.js"></script>
+</head>
+<body onload="QuickRandom();">
+
+	<a name="top"></a>
+
+	<script type="text/javascript">
+
+  		function AppRandom() {
+			document.getElementById("app_wind_bg").style.display = "block";
+			document.getElementById("app_wind_win").style.display = "block";
+			document.body.style.overflow = "hidden";
+			document.body.style.height = "100%";
+			document.getElementById("app").classList.add("app_blur");
+			
+  		}
+
+  		function CloseWindow() {
+  			document.getElementById("app_wind_bg").style.display = "none";	
+  			document.getElementById("app_wind_win").style.display = "none";	
+  			document.body.style.overflow = "scroll";
+  			document.body.style.height = "auto";
+  			document.getElementById("app").classList.remove("app_blur");
+  		}
+
+
+  		function RepeatRandom(){
+  			var repbtn = document.getElementById("repeatbutton");
+  			var rbtn = repbtn.getAttribute("name");
+
+  			if (rbtn == "all") { RandomType0(); }
+  			if (rbtn == "allwe"){ RandomType1(); }
+  			if (rbtn == "movies") { RandomType2(); }
+  			if (rbtn == "tv") { RandomType3(); }
+  			if (rbtn == "tvwe") { RandomType4(); }
+  			if (rbtn == "oneshots") { RandomType5(); }
+  			if (rbtn == "web") { RandomType6(); }
+  			if (rbtn == "tvabc") { RandomType7(); }
+  			if (rbtn == "tvnetflix") { RandomType8(); }
+  			if (rbtn == "tvhf") { RandomType9(); }
+  			if (rbtn == "tvdisney") { RandomType10(); }
+  			if (rbtn == "nonmcu") { RandomType11(); }
+  		}
+
+	</script>
+
+	<script type="text/javascript">
+		 document.body.addEventListener('keypress', function(e) {
+ 		   	if(e.key === "Escape") {
+        		document.getElementById("app_wind_bg").style.display = "none";	
+  				document.getElementById("app_wind_win").style.display = "none";	
+  				document.body.style.overflow = "scroll";
+  				document.body.style.height = "auto";
+  				document.getElementById("app").classList.remove("app_blur");
+    		}
+    	});
+	</script>
+
+	</script>
+
+	<script type="text/javascript">
+		function HelpPage(){
+			document.getElementById("cards").style.display = "none";	
+  			document.getElementById("app_help_page").style.display = "block";	
+		}
+
+		function HelpPageClose() {
+			document.getElementById("cards").style.display = "block";	
+  			document.getElementById("app_help_page").style.display = "none";
+		}
+	</script>
+
+	<div class="app_window_bg" id="app_wind_bg" onclick="CloseWindow()"></div>
+	<div class="app_window app_result_bg" id="app_wind_win">
+		<div class="app_result_card">
+			<div class="app_result_poster"><a href=" " id="TitleIMDBLink" target="_blank"><img src=" " id="TitlePoster"></a></div>
+			<div class="app_result_landscape">
+				<div class="app_result_category" id="TitleCategory"></div>
+				<div class="app_result_title" id="TitleName"></div>	
+				<div class="app_result_episode" id="TitleEpisode"></div>
+				<!-- ><div class="app_result_imdb">IMDb</div></a> -->
+				<div class="app_result_repeat" id="repeatbutton" onclick="RepeatRandom()" name="">Random</div>
+				<div class="app_window_close" id="repeatbutton" onclick="CloseWindow()" name="">Close</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="app" id="app"> <!-- Application -->
+
+		<div class="app_head"> <!-- Header -->
+			<div class="app_head_logo">
+				<a href="index.html">
+				<picture>
+      				<source srcset="images/app/logo_d.png" media="(prefers-color-scheme: dark)" />
+      				<source srcset="images/app/logo_l.png" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+      				<img src="images/app/logo_l.png" class="app_head_logo_styles">
+    			</picture>
+    			</a>
+			</div> <!-- Logo - Left -->
+			<div class="app_head_quickrandom" onclick="QuickRandom()">
+				<div class="app_quickrandom_name">Quick Random:</div>
+				<div class="app_quickrandom_title app_quickrandom_egg" id="QuickRandomResult"></div>
+			</div> <!-- Quick Random Title -->
+		</div>
+
+		<div id="cards">
+
+		<div class="app_card app_card_bg_1" onclick="AppRandom(); RandomType0();">
+			<div class="app_card_name">
+				<div class="app_card_title">Full Random</div>
+				<div class="app_card_description">Get random from all titles.</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_2" onclick="AppRandom(); RandomType1();">
+			<div class="app_card_name">
+				<div class="app_card_title">Full Random 2</div>
+				<div class="app_card_description">Get random from all titles exlude episodes.</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_3" onclick="AppRandom(); RandomType2();">
+			<div class="app_card_name">
+				<div class="app_card_title">Only movies</div>
+				<div class="app_card_description">Get random from 23 movies.</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_4" onclick="AppRandom(); RandomType3();">
+			<div class="app_card_name">
+				<div class="app_card_title">Only TV Shows</div>
+				<div class="app_card_description">Get random from 13 TV Shows.</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_5" onclick="AppRandom(); RandomType4();">
+			<div class="app_card_name">
+				<div class="app_card_title">Only TV Shows 2</div>
+				<div class="app_card_description">Get random from 13 TV Shows exclude episodes.</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_6" onclick="AppRandom(); RandomType5();">
+			<div class="app_card_name">
+				<div class="app_card_title">Only One-shots</div>
+				<div class="app_card_description">Get random from 6 one-shots</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_7" onclick="AppRandom(); RandomType6();">
+			<div class="app_card_name">
+				<div class="app_card_title">Only Web Series</div>
+				<div class="app_card_description">Get random from 5 web series</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_8" onclick="AppRandom(); RandomType7();">
+			<div class="app_card_name">
+				<div class="app_card_title">Only ABC</div>
+				<div class="app_card_description">Get random from 3 TV Shows</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_9" onclick="AppRandom(); RandomType8();">
+			<div class="app_card_name">
+				<div class="app_card_title">Only Netflix</div>
+				<div class="app_card_description">Get random from 6 TV Shows</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_10" onclick="AppRandom(); RandomType9();">
+			<div class="app_card_name">
+				<div class="app_card_title">Only Hulu & Freeform</div>
+				<div class="app_card_description">Get random from Runaways and Cloak & Dagger</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_11" onclick="AppRandom(); RandomType10();">
+			<div class="app_card_name">
+				<div class="app_card_title">Only Disney+</div>
+				<div class="app_card_description">Get random from Marvel Studios TV Shows</div>
+			</div>
+		</div>
+
+		<div class="app_card app_card_bg_12" onclick="AppRandom(); RandomType11();">
+			<div class="app_card_name">
+				<div class="app_card_title">Non-MCU Movies</div>
+				<div class="app_card_description">Get random from Non-MCU Movies</div>
+			</div>
+		</div>
+
+		<a href="timeline.html">
+		<div class="app_card app_card_bg_13">
+			<div class="app_card_name">
+				<div class="app_card_title">MCU Timeline <span style="border: 1px solid red; color: red; font-weight: normal; padding: 0px 5px 0px 5px; border-radius: 4px; font-size: 12px;">beta</span></div>
+				<div class="app_card_description">Marvel Cinematic Universe timline</div>
+			</div>
+		</div>
+	</a>
+
+		<div class="app_footer"> <!-- Footer -->
+			<a href="#top" onclick="HelpPage();">Help & About</a><br><br>
+			<!-- <a class="app_footer_space" href="Help">Coffee</a>
+			<a href="Help">About</a> -->
+		</div>
+
+		</div>
+
+		<div class="app_head_page" id="app_help_page">
+			<h1>Help & About</h1>
+			<!-- <img src="RoundedIcon.png" width="20px" height="20px"> -->
+			<p>Hi! 👋 <br>
+			Thank you for visiting <b>MCU Random</b>.<br>
+			I am a big fan of Marvel Cinematic Universe and like others, who like this Universe, often rewatch all projects.
+			On one day I couldn't choose <b>what to watch today?</b> I was search in Google fast random from all MCU, but not found anything interesting. So i decide to make a <b>complete randomiser from all MCU projects</b>. It was hard, because i’m not professional web designer, but with Google and tenacity, after a few weeks, I present you: <b>MCU Random - Get random title from Marvel Cinematic Universe</b>! This random take part from <b>23 movies</b>, <b>13 TV shows (include episodes)</b>, <b>6 one-shots</b> and <b>5 web series</b>. And as a <b>bonus</b> you can make random from movies, which not join in MCU, starts from 1998 Blade movie. Over time and the release of new episodes and projects I’ll add this in Random. On site launch moment (and writing this text) last project is <b>The Falcon and The Winter Soldier (Season 1, Episode 6: One World, One People)</b>.</p>
+
+			<p>MCU Random is very simple site in functionality and code. Here i show you how to use it and little user tips.</p>
+
+			<img src="screen1.jpg">
+
+			<h3>QuickRandom</h3>
+
+			<img src="screen1_2.jpg">
+
+			<p>On the top right of app you can see Quick Random. It’s shows you random title from all MCU titles (exclude episodes), so “In one click” you can get random title. If you press on this element - it’s shows you new title. Work like a watch. P.S And here you can find Easter Egg 🐣</p>
+
+			<h3>Cards</h3>
+
+			<p>All Randoms have Cards. It’s different types of random, you can see description of random on card.</p>
+			
+			<img src="screen3_1.jpg">
+
+			<p>List of random types and titles in it:</p>
+
+			<h3>Only Movies</h3>
+			<p>Random from 23 movies only</p>
+			<details>
+    		<summary>List of movies</summary>
+    		<div class="app_ui_details">
+			Iron Man<br>
+			The Incredible Hulk<br>
+			Iron Man 2<br>
+			Thor<br>
+			Captain America: The First Avenger<br>
+			Marvel's The Avengers<br>
+			Iron Man 3<br>
+			Thor: The Dark World<br>
+			Captain America: The Winter Soldier<br>
+			Guardians of the Galaxy<br>
+			Avengers: Age of Ultron<br>
+			Ant-Man<br>
+			Captain America: Civil War<br>
+			Doctor Strange<br>
+			Guardians of the Galaxy Vol. 2<br>
+			Spider-Man: Homecoming<br>
+			Thor: Ragnarok<br>
+			Black Panther<br>
+			Avengers: Infinity War<br>
+			Ant-Man and the Wasp<br>
+			Captain Marvel<br>
+			Avengers: Endgame<br>
+			Spider-Man: Far From Home<br>
+			</div>
+			</details>
+
+			<h3>Only One-Shots</h3>
+			<p>Random from 6 one-shots</p>
+			<details>
+    		<summary>List of one-shots</summary>
+    		<div class="app_ui_details">
+			The Consultant<br>
+			A Funny Thing Happened on the Way to Thor's Hammer<br>
+			Item 47<br>
+			Agent Carter<br>
+			All Hail the King<br>
+			Peter's To-Do List<br>
+			</div>
+			</details>
+
+			<h3>Only Web-Series</h3>
+			<p>Random from 5 web series</p>
+			<details>
+    		<summary>List of web series</summary>
+    		<div class="app_ui_details">
+			Team Thor<br>
+			Team Thor: Part 2<br>
+			Team Darryl<br>
+			WHIH Newsfront<br>
+			Agents of S.H.I.E.L.D.: Slingshot<br>
+			</div>
+			</details>
+
+			<h3>Only ABC</h3>
+			<p>Random from 3 TV Shows</p>
+			<details>
+    		<summary>List of ABC TV Series</summary>
+    		<div class="app_ui_details">
+			Agents of S.H.I.E.L.D.<br>
+			Agent Carter (TV)<br>
+			Inhumans<br>
+			</div>
+			</details>
+
+			<h3>Only Netflix</h3>
+			<p>Random from 6 TV Shows</p>
+			<details>
+    		<summary>List of Netflix TV Series</summary>
+    		<div class="app_ui_details">
+			Daredevil<br>
+			Jessica Jones<br>
+			Luke Cage<br>
+			Iron Fist<br>
+			The Defenders<br>
+			The Punisher<br>
+			</div>
+			</details>
+
+			<h3>Only Hulu & Freeform</h3>
+			<p>Random from 2 TV Shows</p>
+			<details>
+    		<summary>List of Hulu & Freeform TV Series</summary>
+    		<div class="app_ui_details">
+			Runaways<br>
+			Cloak & Dagger<br>
+			</div>
+			</details>
+
+			<h3>Only Disney+</h3>
+			<p>Random from 2 TV Shows</p>
+			<details>
+    		<summary>List of Disney+ TV Shows</summary>
+    		<div class="app_ui_details">
+			WandaVision<br>
+			The Falcon and The Winter Soldier<br>
+			</div>
+			</details>
+
+			<h3>Non-MCU Movies</h3>
+			<p>Random from 33 movies</p>
+			<details>
+    		<summary>List of Non-MCU movies</summary>
+    		<div class="app_ui_details">
+			Blade<br>
+			X-Men<br>
+			Blade II<br>
+			Spider-Man<br>
+			Daredevil<br>
+			X2<br>
+			Hulk<br>
+			The Punisher<br>
+			Spider-Man 2<br>
+			Blade: Trinity<br>
+			Elektra<br>
+			Fantastic Four<br>
+			X-Men: The Last Stand<br>
+			Ghost Rider<br>
+			Spider-Man 3<br>
+			Fantastic Four: Rise of the Silver Surfer<br>
+			Punisher: War Zone<br>
+			X-Men Origins: Wolverine<br>
+			X-Men: First Class<br>
+			Ghost Rider: Spirit of Vengeance<br>
+			The Amazing Spider-Man<br>
+			The Wolverine<br>
+			The Amazing Spider-Man 2<br>
+			X-Men: Days of Future Past<br>
+			Fantastic Four (Remake)<br>
+			Deadpool<br>
+			X-Men: Apocalypse<br>
+			Logan<br>
+			Deadpool 2<br>
+			Venom<br>
+			Dark Phoenix<br>
+			The New Mutants<br>
+			</div>
+			</details>
+
+			<h3>Result window</h3>
+
+			<p>When you press on Card - it's show you result instantly.</p>
+
+			<img src="screen2.jpg">
+
+			<p>You can press on Random button to show new result, Close button to close window.</p>
+
+			<img src="screen6_1.jpg">
+
+			<p>To close window you can press Esc on keyboard. Press on Poster image to open current title on IMDb.</p>
+
+			<h3>Light and Dark Themes</h3>
+
+			<p>site is support System Appearance, so it have 2 themes: Light and Dark</p>
+
+			<img src="screen4_1.jpg">
+
+			<p>You don’t need to switch themes on site, colors automatically changes, when you change system appearance.</p>
+
+			<h3>MCU Timeline <span style="border: 1px solid red; color: red; font-weight: normal; padding: 0px 5px 0px 5px; border-radius: 4px; font-size: 12px;">beta</span></h3>
+
+			<img src="screen1 copy.jpg">
+
+
+			<p>Additional card is MCU Timeline. It's page with all MCU projects in one line. You can see what to watch and don't miss anything!</p>
+			
+			<img src="screen_123.jpg">
+
+			<p>This page on beta, it have little functions, but a lot of work need to do here.</p>
+			<p>At now you can all MCU titles.</p>
+
+			<img src="screen_234.jpg">
+
+			<p>By default it's sort by Story timeline.</p>
+
+			<p>You can simply choose another sort by press Sort by section:</p>
+
+			<img src="screen_765.jpg">
+
+			<p>Release means sort all titles by date of release:</p>
+
+			<img src="screen_789.jpg">
+
+			<p>If you press Only Marvel Studios - it's hide all projects exclude tittles made by Marvel Studios. This work in both sorts:</p>
+			<p>To show all titles again open menu and press All titles.</p>
+
+			<img src="screen_890.jpg">
+
+			<h3>Apps</h3>
+
+			<p>All site is PWA (Progressive Web App), so it’s adapted to mobiles devices (I was planning this site as mobile app first), so you can add it on you Home Screen and use it, when you need it!</p>
+
+			<img src="screen5_1.jpg">
+
+			<p>You can download macOS app. It's have all website functionality, HQ images and works without Internet*.</p>
+			<p>App in beta version, it's work from Mac OS 10.9 and more.</p>
+			
+			<img src="screen_923.jpg">
+
+			<p>It's made on MacGap 2. Source code of app you can find here.</p>
+
+
+
+			<h2>Contact and copyrights</h2>
+			<p>If you found bug, or have idea, or you just want to talk - be free to write email:</p>
+
+			<p>Marvel and all content is property of Marvel Entertainment and holds by copyright</p>
+			<p>All images is property of Marvel and founded in web.</p>
+			<p>Timeline page sort info gets from ...</p>
+
+			<p>Site is ad-free and non-comercial, works as is and contain onlu Utilities functionality.</p>
+
+			<p>MCURandom website source code is open:</p>
+			<p>MCURandom app source code is open:</p>
+
+			<a class="app_ui_url2" href="#">GitHub</a>
+			</p>
+			<h2>Coffee</h2>
+			<p>If site is helpful - you can say thanks by buying me a coffee! </p>
+
+			<p>Thank you!</p>
+
+			<img src="screen1234.jpg">
+
+		<div class="app_footer"> <!-- Footer -->
+			<a href="#top" onclick="HelpPageClose();">Back</a>
+		</div>
+
+		</div>
+
+	</div> <!-- Application -->
+
+</body>
+</html>

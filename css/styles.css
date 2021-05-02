@@ -1,0 +1,306 @@
+*{	-webkit-user-select: none; -khtml-user-select: none; -moz-user-select: -moz-none; -o-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+html { margin: 0; padding: 0; }
+body { margin: 0; padding: 0; background: #fff; color: #000; font-family: Helvetica;}
+a { color: #777; }
+h1 { margin-top: 40px; margin-bottom: 30px; color: #000;}
+h2 { color: #000; }
+span { color: #000; }
+p { color: #000; line-height: 27px; }
+img { width: 100%; height: auto; }
+details { color: #000; padding-left: 10px; line-height: 25px;}
+summary { color: #000; outline:none; margin-bottom: 10px; cursor: pointer; }
+
+#cards { display: block; }
+#app_help_page { display: none; }
+
+.app { margin: 0 auto; max-width: 700px; padding: 25px; }
+
+.app_head { height: 50px; margin-top: 20px; }
+.app_head_logo { float: left; width: 50%; }
+.app_head_logo_styles { width: 100%; height: auto; max-width: 245px; }
+.app_head_quickrandom { float: right; height: 50px; text-align: right;  width: 40%; cursor: pointer;}
+.app_quickrandom_name { font-size: 13px; }
+.app_quickrandom_title { font-size: 13px; font-weight: bold; }
+
+.app_card{ height: 170px; border-radius: 29px; margin-top: 50px; box-shadow: 1px 2px 20px #777; transition: 0.5s; cursor: pointer; position:relative;}
+.app_card:hover { transform: scale(0.98); transition: 0.5s;}
+.app_card:active { transform: scale(0.98); transition: 0.5s;}
+
+.app_card_bg_1 { background-color: #111; background-image: url('../images/app/cardcovers/card1.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_2 { background-color: #111; background-image: url('../images/app/cardcovers/card2.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_3 { background-color: #111; background-image: url('../images/app/cardcovers/card3.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_4 { background-color: #111; background-image: url('../images/app/cardcovers/card4.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_5 { background-color: #111; background-image: url('../images/app/cardcovers/card5.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_6 { background-color: #111; background-image: url('../images/app/cardcovers/card6.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_7 { background-color: #111; background-image: url('../images/app/cardcovers/card7.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_8 { background-color: #111; background-image: url('../images/app/cardcovers/card8.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_9 { background-color: #111; background-image: url('../images/app/cardcovers/card9.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_10 { background-color: #111; background-image: url('../images/app/cardcovers/card10.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_11 { background-color: #111; background-image: url('../images/app/cardcovers/card11.jpg'); background-size: cover; background-position: center; }
+.app_card_bg_12 { background-color: #111; background-image: url('../images/app/cardcovers/card12.jpg'); background-size: cover; background-position: center; } 
+.app_card_bg_13 { background-color: #111; background-image: url('../images/app/cardcovers/card13.jpg'); background-size: cover; background-position: center; } 
+
+.app_card_name { height: 60px; padding-left: 20px; padding-right: 20px; color: #fff; position: absolute; bottom: 0;}
+.app_card_title { font-size: 18px; font-weight: bold; text-shadow: 1px 1px 8px #000;}
+.app_card_description { font-size: 14px; margin-top: 5px; text-shadow: 1px 1px 5px #000;}
+
+.app_footer { height: 50px; text-align: center; margin-top: 60px; margin-bottom: 50px; }
+.app_footer_space {margin-right: 10px;}
+
+.app_blur { filter: blur(10px); }
+
+.app_window_bg { display: none; position: fixed; width: 100%; height: 100%; z-index: 1; left: 0; top: 0; background-color: rgba(0,0,0,0.8); }
+
+.app_window { display: none; position: fixed; background-color: #fff; color: #000; border-radius: 29px; padding: 40px; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2;}
+
+.app_result_card { width: 202px;; margin: 0 auto; position: relative; }
+.app_result_poster { text-align: center; margin-bottom: 18px; transition: 0.5s;}
+.app_result_poster:hover, .app_result_poster:active { transform: scale(0.98); transition: 0.5s; }
+.app_result_poster img { border-radius: 8px; box-shadow: 1px 2px 15px #777; }
+.app_result_category { text-align: center; font-size: 14px; }
+.app_result_title { text-align: center; font-size: 21px; font-weight: bold; margin-top: 5px; }
+.app_result_episode { text-align: center; margin-top: 6px; }
+.app_result_repeat { text-align: center; background-color: #f50007; color: #fff; font-size: 14px; padding: 10px 20px; margin-top: 20px; border-radius: 5px; cursor: pointer;
+					font-weight: bold; transition: 0.5s;}
+.app_result_repeat:hover, .app_result_repeat:active { transform: scale(0.98); transition: 0.5s; }					
+.app_window_close { text-align: center; background-color: #777; color: #fff; font-size: 14px; padding: 10px 20px; margin-top: 10px; border-radius: 5px; cursor: pointer;
+ 					font-weight: bold; transition: 0.5s; }
+.app_window_close:hover, .app_window_close:active { transform: scale(0.98); transition: 0.5s;}
+
+.app_ui_details { padding-left: 20px; }		
+.app_ui_url2 { color: #f50007; }			
+
+
+/* MCU Timeline */
+
+.timeline_page{
+	padding-top: 25px;
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+ .timeline_menu{
+ 	background-color: #fff;
+ 	width: 170px;
+ 	position: absolute;
+ 	right: 60px;
+ 	top: 40px;
+ 	border-radius: 5px;
+ 	box-shadow: 0px 1px 10px #555;
+ 	/*padding: 5px;*/
+ 	z-index: 8;
+ 	display: none;
+ }
+
+ .timeline_menu_close{
+ 	background-color: transparent;
+ 	width: 100%;
+ 	height: 100%;
+ 	left: 0;
+ 	top: 0;
+ 	position: absolute;
+ 	/*padding: 5px;*/
+ 	z-index: 7;
+ 	display: none;
+ }
+
+ .timeline_menu div {
+ 	font-size: 14px;
+ 	padding: 14px;
+ 	border-bottom: 1px solid lightgray;
+ 	text-align: left;
+ }
+
+ .up_btn{
+ 	position: fixed;
+ 	bottom: 25px;
+ 	right: 25px;
+ 	width: 50px;
+ 	text-align: center;
+ 	padding: 8px 0px 8px 0px;
+ 	border-radius: 8px;
+ 	background-color: red;
+ 	color: #fff;
+ 	visibility: hidden;
+  	opacity: 0;
+  	transition: visibility 0.28s, opacity 0.5s linear;
+  	cursor: pointer;
+ }
+
+ .timeline_menu hr{
+ 	margin-top: 5px;
+ 	margin-bottom: 5px;
+ 	margin-left: 6px;
+ 	margin-right: 6px;
+ 	border: none;
+    height: 1px;
+    background-color: lightgray;
+ }
+
+  .timeline_menu div:hover {
+ 	background-color: red;
+ 	color: #fff;
+ }
+
+ .timeline_menu > div:first-child {
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+}
+
+ .timeline_menu > div:last-child { /*!!! Выбор последнего элемента из div в timeline_menu*/
+    border-bottom-left-radius:6px;
+    border-bottom-right-radius:6px;
+}
+
+  .timeline_menu .last {
+ 	border: 0;
+ 	font-weight: bold;
+ 	border-bottom-left-radius:6px;
+   border-bottom-right-radius:6px;
+ }
+
+ a.menu_url{
+ 	text-decoration: none;
+ 	color: initial;
+ 	border-bottom-left-radius:6px;
+   border-bottom-right-radius:6px;
+ }
+
+.app_timeline{
+	width: 100%;
+	/*height: 500px;*/
+	margin-top: 20px;
+	padding-left: 40px;
+	box-sizing: border-box;
+	/*background-color: #F9F9F9; */
+	overflow-x: scroll;
+  	overflow-y: hidden;
+  	/*white-space: nowrap;*/
+  	-ms-overflow-style: none;  /* IE and Edge */
+  	scrollbar-width: none;
+  	display: flex;
+  	flex-wrap: nowrap;
+  	-webkit-overflow-scrolling: touch;
+  	/*border-bottom: 4px solid #fff;*/
+}
+
+::-webkit-scrollbar{
+	display: none;
+}
+
+.card {
+	width: 180px;
+    flex: 0 0 auto;
+    margin-right: 25px;
+    padding: 20px;
+    text-align: center;
+    /*background-color: red;*/ 
+ }
+
+ .card:focus {
+ 	outline: none;
+/* 	background-color: red;
+ 	border-radius: 20px;
+ 	transform: scale(1.03);
+ 	transition: 0.3s;*/
+}
+
+ .card:hover {
+ 	outline: none;
+ 	/*border-radius: 20px;*/
+ 	transform: scale(1.03);
+ 	transition: 0.3s;
+}
+
+/* .card:hover{
+ 	background-color: rgba(240,240,240,0.3);
+ 	border-radius: 20px;
+ }*/
+
+ .card_name{
+ 	margin-top: 20px;
+ 	text-align: center;
+ 	color: #000;
+ 	font-weight: bold;
+ 	font-size: 15px;
+ }
+
+  .card_name_type{
+ 	margin-top: 10px;
+ 	text-align: center;
+ 	color: #000;
+ 	font-size: 13px;
+ 	/*border: 1px solid #000;*/
+ 	padding: 3px;
+ 	display: inline-block;
+ 	border-radius: 3px;
+ }
+
+ .card_name_wtw{
+ 	margin-top: 10px;
+ 	text-align: center;
+ 	color: #000;
+ 	font-size: 13px;
+/* 	border: 1px solid #000;
+ 	padding: 3px;
+ 	display: inline-block;
+ 	border-radius: 3px;*/
+ }
+
+ .card img {
+ 	/*border: 1px solid #555555;*/
+ 	width: 180px;
+ 	height: auto;
+ 	border-radius: 8px;
+ 	box-shadow: 1px 2px 15px #777;
+ }
+
+
+@media screen and (prefers-color-scheme: dark) {
+	body { background: #000; color: #fff; }
+	h1 { color: #fff; }
+	h2 { color: #fff; }
+	span { color: #fff; }
+	p { color: #fff; }
+	details { color: #fff; }
+	summary { color: #fff; }
+	.app_card { box-shadow: none; border: 1px solid #222; }
+	.app_window { background: #000; color: #fff; }
+	.app_result_poster img { border: 1px solid #555; box-shadow: none; }
+	a.menu_url { color: #fff; }
+
+	.timeline_menu{ background-color: #000; color: #fff; box-shadow: none; border: 1px solid #222; }
+	.timeline_menu div { border-bottom: 1px solid #222; }
+	.card_name { color: #fff; }
+	.card_name_type { color: #fff; }
+	.card_name_wtw { color: #fff; }
+	.card img { box-shadow: none; border: 1px solid #222; }
+}
+
+@media screen and (max-width: 700px) {
+	.app_window_bg { background-color: #fff; }
+	.timeline_page { padding-left: 0; padding-right: 0; margin-left: 25px; margin-right: 25px; }
+	.app_timeline { display: block; padding-right: 60px; padding-left: 60px; margin-bottom: 70px;}
+	.timeline_menu { right: 25px; }
+	.card { margin: 0 auto; }
+	/*.card_name { display: inline-block; }
+	.card img { display: inline-block; }*/
+}
+
+@media screen and (prefers-color-scheme: dark) and (max-width: 700px) {
+	.app_window_bg { background-color: #000; }
+}
+
+@media screen and (orientation: landscape) {
+	.app_window_bg { background-color: #fff; }
+	.app_result_card { width: 500px; }
+	.app_result_poster { float: left; display: inline-block;}
+	.app_result_landscape { float: right; display: inline-block; width: 260px;}
+	.app_result_category { text-align: left; }
+	.app_result_title { text-align: left; }
+	.app_result_episode { text-align: left; }
+}
+
+@media screen and (orientation: landscape) and (prefers-color-scheme: dark) {
+	.app_window_bg { background-color: #000; }
+}

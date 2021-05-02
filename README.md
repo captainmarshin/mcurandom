@@ -1,2 +1,2 @@
 # mcurandom
-Get random title from Marvel Cinematic Universe
+Show random title from Marvel Cinematic Universe
