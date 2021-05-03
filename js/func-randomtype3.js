@@ -467,7 +467,9 @@ var tv_falconwintersoldier = [
 "FWS - New World Order",
 "FWS - The Star-Spangled Man",
 "FWS - Power Broker",
-"FWS - The Whole World Is Watching"
+"FWS - The Whole World Is Watching",
+"FWS - Truth",
+"FWS - One World, One People"
 ];
 
 var titles = tv.concat(tv_agentsofshield,tv_agentcarter,tv_inhumans,tv_daredevil,tv_jessicajones,tv_lukecage,tv_ironfist,tv_thedefenders,tv_thepunisher,tv_runaways,tv_cloakanddagger,tv_wandavision,tv_falconwintersoldier);
@@ -4141,6 +4143,24 @@ document.getElementById('TitleCategory').textContent = "Falcon and the Winter So
 document.getElementById('TitleName').textContent = "The Whole World Is Watching";
 document.getElementById('TitleEpisode').style.display = "block";
 document.getElementById('TitleEpisode').textContent = "Season 1, Episode 4";
+}
+
+if (result == "FWS - Truth") {
+document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt9212996/";
+document.getElementById('TitlePoster').src = "images/tv/falconwintersoldier_s1.jpg";
+document.getElementById('TitleCategory').textContent = "Falcon and the Winter Soldier";
+document.getElementById('TitleName').textContent = "Truth";
+document.getElementById('TitleEpisode').style.display = "block";
+document.getElementById('TitleEpisode').textContent = "Season 1, Episode 5";
+}
+
+if (result == "FWS - One World, One People") {
+document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt9212998/";
+document.getElementById('TitlePoster').src = "images/tv/falconwintersoldier_s1.jpg";
+document.getElementById('TitleCategory').textContent = "Falcon and the Winter Soldier";
+document.getElementById('TitleName').textContent = "One World, One People";
+document.getElementById('TitleEpisode').style.display = "block";
+document.getElementById('TitleEpisode').textContent = "Season 1, Episode 6";
 }
 
 document.getElementById("repeatbutton").setAttribute("name","tv");

@@ -41,9 +41,6 @@ var oneshots = [
 
 var webseries = [
 
-"Team Thor",
-"Team Thor: Part 2",
-"Team Darryl",
 "WHIH Newsfront",
 "Agents of S.H.I.E.L.D.: Slingshot"
 
@@ -324,29 +321,29 @@ document.getElementById('TitleEpisode').style.display = "none";
 
 //WEBSERIES
 
-if (result == "Team Thor") {
-document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt6016776/";
-document.getElementById('TitlePoster').src = "images/web/teamthor-imdb.jpg";
-document.getElementById('TitleCategory').textContent = "Web Series";
-document.getElementById('TitleName').textContent = "Team Thor";
-document.getElementById('TitleEpisode').style.display = "none";
-}
+// if (result == "Team Thor") {
+// document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt6016776/";
+// document.getElementById('TitlePoster').src = "images/web/teamthor-imdb.jpg";
+// document.getElementById('TitleCategory').textContent = "Web Series";
+// document.getElementById('TitleName').textContent = "Team Thor";
+// document.getElementById('TitleEpisode').style.display = "none";
+// }
 
-if (result == "Team Thor: Part 2") {
-document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt6599818/";
-document.getElementById('TitlePoster').src = "images/web/teamthorp2-imdb.jpg";
-document.getElementById('TitleCategory').textContent = "Web Series";
-document.getElementById('TitleName').textContent = "Team Thor: Part 2";
-document.getElementById('TitleEpisode').style.display = "none";
-}
+// if (result == "Team Thor: Part 2") {
+// document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt6599818/";
+// document.getElementById('TitlePoster').src = "images/web/teamthorp2-imdb.jpg";
+// document.getElementById('TitleCategory').textContent = "Web Series";
+// document.getElementById('TitleName').textContent = "Team Thor: Part 2";
+// document.getElementById('TitleEpisode').style.display = "none";
+// }
 
-if (result == "Team Darryl") {
-document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt8023090/";
-document.getElementById('TitlePoster').src = "images/web/teamdarryl.jpg";
-document.getElementById('TitleCategory').textContent = "Web Series";
-document.getElementById('TitleName').textContent = "Team Darryl";
-document.getElementById('TitleEpisode').style.display = "none";
-}
+// if (result == "Team Darryl") {
+// document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt8023090/";
+// document.getElementById('TitlePoster').src = "images/web/teamdarryl.jpg";
+// document.getElementById('TitleCategory').textContent = "Web Series";
+// document.getElementById('TitleName').textContent = "Team Darryl";
+// document.getElementById('TitleEpisode').style.display = "none";
+// }
 
 if (result == "WHIH Newsfront") {
 document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt5296048/";

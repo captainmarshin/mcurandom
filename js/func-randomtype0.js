@@ -41,9 +41,6 @@ var oneshots = [
 
 var webseries = [
 
-"Team Thor",
-"Team Thor: Part 2",
-"Team Darryl",
 "WHIH Newsfront",
 "Agents of S.H.I.E.L.D.: Slingshot"
 
@@ -542,7 +539,9 @@ var tv_falconwintersoldier = [
 "FWS - New World Order",
 "FWS - The Star-Spangled Man",
 "FWS - Power Broker",
-"FWS - The Whole World Is Watching"
+"FWS - The Whole World Is Watching",
+"FWS - Truth",
+"FWS - One World, One People"
 ];
 
 
@@ -871,29 +870,29 @@ document.getElementById('TitleEpisode').style.display = "none";
 
 //WEBSERIES
 
-if (result == "Team Thor") {
-document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt6016776/";
-document.getElementById('TitlePoster').src = "images/web/teamthor-imdb.jpg";
-document.getElementById('TitleCategory').textContent = "Web Series";
-document.getElementById('TitleName').textContent = "Team Thor";
-document.getElementById('TitleEpisode').style.display = "none";
-}
+// if (result == "Team Thor") {
+// document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt6016776/";
+// document.getElementById('TitlePoster').src = "images/web/teamthor-imdb.jpg";
+// document.getElementById('TitleCategory').textContent = "Web Series";
+// document.getElementById('TitleName').textContent = "Team Thor";
+// document.getElementById('TitleEpisode').style.display = "none";
+// }
 
-if (result == "Team Thor: Part 2") {
-document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt6599818/";
-document.getElementById('TitlePoster').src = "images/web/teamthorp2-imdb.jpg";
-document.getElementById('TitleCategory').textContent = "Web Series";
-document.getElementById('TitleName').textContent = "Team Thor: Part 2";
-document.getElementById('TitleEpisode').style.display = "none";
-}
+// if (result == "Team Thor: Part 2") {
+// document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt6599818/";
+// document.getElementById('TitlePoster').src = "images/web/teamthorp2-imdb.jpg";
+// document.getElementById('TitleCategory').textContent = "Web Series";
+// document.getElementById('TitleName').textContent = "Team Thor: Part 2";
+// document.getElementById('TitleEpisode').style.display = "none";
+// }
 
-if (result == "Team Darryl") {
-document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt8023090/";
-document.getElementById('TitlePoster').src = "images/web/teamdarryl.jpg";
-document.getElementById('TitleCategory').textContent = "Web Series";
-document.getElementById('TitleName').textContent = "Team Darryl";
-document.getElementById('TitleEpisode').style.display = "none";
-}
+// if (result == "Team Darryl") {
+// document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt8023090/";
+// document.getElementById('TitlePoster').src = "images/web/teamdarryl.jpg";
+// document.getElementById('TitleCategory').textContent = "Web Series";
+// document.getElementById('TitleName').textContent = "Team Darryl";
+// document.getElementById('TitleEpisode').style.display = "none";
+// }
 
 if (result == "WHIH Newsfront") {
 document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt5296048/";
@@ -4727,6 +4726,25 @@ document.getElementById('TitleCategory').textContent = "Falcon and the Winter So
 document.getElementById('TitleName').textContent = "The Whole World Is Watching";
 document.getElementById('TitleEpisode').style.display = "block";
 document.getElementById('TitleEpisode').textContent = "Season 1, Episode 4";
+}
+
+
+if (result == "FWS - Truth") {
+document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt9212996/";
+document.getElementById('TitlePoster').src = "images/tv/falconwintersoldier_s1.jpg";
+document.getElementById('TitleCategory').textContent = "Falcon and the Winter Soldier";
+document.getElementById('TitleName').textContent = "Truth";
+document.getElementById('TitleEpisode').style.display = "block";
+document.getElementById('TitleEpisode').textContent = "Season 1, Episode 5";
+}
+
+if (result == "FWS - One World, One People") {
+document.getElementById('TitleIMDBLink').href = "https://www.imdb.com/title/tt9212998/";
+document.getElementById('TitlePoster').src = "images/tv/falconwintersoldier_s1.jpg";
+document.getElementById('TitleCategory').textContent = "Falcon and the Winter Soldier";
+document.getElementById('TitleName').textContent = "One World, One People";
+document.getElementById('TitleEpisode').style.display = "block";
+document.getElementById('TitleEpisode').textContent = "Season 1, Episode 6";
 }
 
 
