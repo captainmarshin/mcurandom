@@ -1,4 +1,4 @@
 ![MCURandom Logo](/images/app/logo.png)
 
-# mcurandom
-Show random title from Marvel Cinematic Universe
+# MCU Random
+Get random title from Marvel Cinematic Universe
