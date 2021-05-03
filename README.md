@@ -27,7 +27,8 @@ On the right top QuickRandom Function. In one click get random title from all MC
 
 ## MCU Timeline (beta)
 
-All MCU titles timeline with sort by story or release.
+All MCU titles timeline with sort by story or release.<br>
+[Timeline](mcurandom.com/timeline.html)
 
 ## PWA
 
@@ -39,7 +40,9 @@ Website switches colors based on system appearance.
 
 ## macOS app (beta)
 
-All website functionality in simple macOS App.
+All website functionality in simple macOS App.<br>
+[About](https://github.com/redbrick1710/mcurandom/tree/main/macos)<br> 
+[Download](https://github.com/redbrick1710/mcurandom/raw/main/macos/mcurandom.dmg)
 
 
 
