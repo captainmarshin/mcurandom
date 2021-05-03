@@ -44,6 +44,8 @@ summary { color: #000; outline:none; margin-bottom: 10px; cursor: pointer; }
 .app_card_title { font-size: 18px; font-weight: bold; text-shadow: 1px 1px 8px #000;}
 .app_card_description { font-size: 14px; margin-top: 5px; text-shadow: 1px 1px 5px #000;}
 
+#TitlePoster { width: 200px; height: 295px; }
+
 .app_footer { height: 50px; text-align: center; margin-top: 60px; margin-bottom: 50px; }
 .app_footer_space {margin-right: 10px;}
 
