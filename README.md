@@ -28,7 +28,7 @@ On the right top QuickRandom Function. In one click get random title from all MC
 ## MCU Timeline (beta)
 
 All MCU titles timeline with sort by story or release.<br>
-[Timeline](mcurandom.com/timeline.html)
+[Timeline](http://mcurandom.com/timeline)
 
 ## PWA
 
