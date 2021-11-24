@@ -32,6 +32,26 @@
 	<link rel="manifest" href="images/app/favicon/site.webmanifest">
 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<style type="text/css">
+		.menu_settings{
+			float: right;
+		}
+		.menu_settings:after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+		
+		.menu_setti{
+			float: left;
+		}
+
+		.fixmenu{
+			margin-right: 4px;
+		}
+
+	</style>
 	
 	<style type="text/css"> html { scroll-behavior: smooth; } #sortRelease { display: none; } </style>
 
@@ -54,7 +74,10 @@
 			</div>
 			<div class="app_head_quickrandom" onclick="Menu()">
 				<div class="app_quickrandom_name">Sort by:</div>
-				<div class="app_quickrandom_title app_quickrandom_egg" id="SortResult">Story</div>
+				<div class="menu_settings">
+					<div class="app_quickrandom_title app_quickrandom_egg menu_setti fixmenu" id="SortResult">Story</div>
+					<div class="app_quickrandom_title app_quickrandom_egg menu_setti" id="MSFil">(All studios)</div>
+				</div>
 				<div class="timeline_menu_close" id="menu_closearea"></div>
 				<div class="timeline_menu" id="menu">
 					<div onclick="OrderStory();">Story</div>
@@ -82,7 +105,9 @@
 			function MarvelStudiosFilter() {
 				var elements = document.querySelectorAll('div.app_timeline > div.nonms');
 				var x = document.getElementById('msfilter');
+				var xx = document.getElementById('MSFil');
 				x.innerHTML = (x.innerHTML == 'Only Marvel Studios') ? 'All studios' : 'Only Marvel Studios';
+				xx.innerHTML = (xx.innerHTML == '(Marvel Studios)') ? '(All studios)' : '(Marvel Studios)';
 
   				for (var elem of elements) {
     			elem.style.display = (elem.style.display == 'none') ? 'block' : 'none';
@@ -221,6 +246,9 @@
 				<div class="card" tabindex="1"> <img src="images/movies/captainamericacivilwar.jpg"> <div class="card_name">Captain America: Civil War</div> 
 				<div class="card_name_type">Movie</div>
 				</div>
+				<div class="card" tabindex="1"> <img src="images/movies/blackwidow.jpg"> <div class="card_name">Black Widow</div> 
+				<div class="card_name_type">Movie</div>
+				</div>
 				<div class="card nonms" tabindex="1"> <img src="images/tv/agentsofshield_s3.jpg"> <div class="card_name">Agents of S.H.I.E.L.D</div> 
 				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 3</div> <div class="card_name_type">Episode 20</div>
 				</div>
@@ -306,7 +334,16 @@
 				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 3</div> <div class="card_name_type">Episode 10</div>
 				</div>
 				<div class="card" tabindex="1"> <img src="images/movies/avengersendgame.jpg"> <div class="card_name">Avengers: Endgame</div> 
-				<div class="card_name_type">Movie</div> 
+				<div class="card_name_type">Movie</div>
+				</div>
+				<div class="card" tabindex="1"> <img src="images/movies/eternals.jpg"> <div class="card_name">Eternals</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card" tabindex="1"> <img src="images/tv/loki_s1.jpg"> <div class="card_name">Loki</div> 
+				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 1</div>
+				</div>
+				<div class="card" tabindex="1"> <img src="images/tv/whatif_s1.jpg"> <div class="card_name">What If...?</div> 
+				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 1</div>
 				</div>
 				<div class="card" tabindex="1"> <img src="images/tv/wandavision_s1.jpg"> <div class="card_name">WandaVision</div> 
 				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 1</div>
@@ -314,17 +351,50 @@
 				<div class="card" tabindex="1"> <img src="images/tv/falconwintersoldier_s1.jpg"> <div class="card_name">The Falcon and The Winter Soldier</div> 
 				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 1</div>
 				</div>
+				<div class="card" tabindex="1"> <img src="images/movies/shangchi.jpg"> <div class="card_name">Shang-Chi And The Legend Of The Ten Rings</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/movies/venom.jpg"> <div class="card_name">Venom</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
 				<div class="card" tabindex="1"> <img src="images/oneshots/peterstodolist.jpg"> <div class="card_name">Peter's To-Do List</div> 
 				<div class="card_name_type">One-Shot</div> 
 				</div>
 				<div class="card" tabindex="0"> <img src="images/movies/spider-manfarfromhome.jpg"> <div class="card_name">Spider-Man: Far From Home</div> 
 				<div class="card_name_type">Movie</div>
 				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/movies/venom2.jpg"> <div class="card_name">Venom: Let There Be Carnage</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/non-mcu/movies/spider-man.jpg"> <div class="card_name">Spider-Man</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/non-mcu/movies/spider-man2.jpg"> <div class="card_name">Spider-Man 2</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/non-mcu/movies/spider-man3.jpg"> <div class="card_name">Spider-Man 3</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/non-mcu/movies/amazingspider-man.jpg"> <div class="card_name">The Amazing Spider-Man</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/non-mcu/movies/amazingspider-man2.jpg"> <div class="card_name">The Amazing Spider-Man 2</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
 			</div>
 		</div>
 
 		<div id="sortRelease">
 			<div class="app_timeline">
+				<div class="card nonms" tabindex="1"> <img src="images/non-mcu/movies/spider-man.jpg"> <div class="card_name">Spider-Man</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/non-mcu/movies/spider-man2.jpg"> <div class="card_name">Spider-Man 2</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/non-mcu/movies/spider-man3.jpg"> <div class="card_name">Spider-Man 3</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
 				<div class="card" tabindex="1"> <img src="images/movies/ironman.jpg"> <div class="card_name">Iron Man</div> 
 				<div class="card_name_type">Movie</div>
 				</div>
@@ -347,6 +417,9 @@
 				</div>
 				<div class="card" tabindex="1"> <img src="images/movies/theavengers.jpg"> <div class="card_name">Marvel's The Avengers</div> 
 				<div class="card_name_type">Movie</div>
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/non-mcu/movies/amazingspider-man.jpg"> <div class="card_name">The Amazing Spider-Man</div> 
+				<div class="card_name_type">Movie</div>  
 				</div>
 				<div class="card" tabindex="1"> <img src="images/oneshots/item47.jpg"> <div class="card_name">Item 47</div> 
 				<div class="card_name_type">One-Shot</div>
@@ -377,6 +450,9 @@
 				</div>
 				<div class="card nonms" tabindex="1"> <img src="images/tv/agentsofshield_s1.jpg"> <div class="card_name">Agents of S.H.I.E.L.D</div> 
 				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 1</div> <div class="card_name_type">Episode 17 - 22</div>
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/non-mcu/movies/amazingspider-man2.jpg"> <div class="card_name">The Amazing Spider-Man 2</div> 
+				<div class="card_name_type">Movie</div>  
 				</div>
 				<div class="card" tabindex="1"> <img src="images/movies/guardiansofthegalaxy.jpg"> <div class="card_name">Guardians of the Galaxy</div>
 				<div class="card_name_type">Movie</div>
@@ -570,6 +646,9 @@
 				<div class="card nonms" tabindex="1"> <img src="images/tv/ironfist_s2.jpg"> <div class="card_name">Iron Fist</div> 
 				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 2</div> 
 				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/movies/venom.jpg"> <div class="card_name">Venom</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
 				<div class="card nonms" tabindex="1"> <img src="images/tv/daredevil_s3.jpg"> <div class="card_name">Daredevil</div>
 				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 3</div>
 				</div>
@@ -638,6 +717,24 @@
 				</div>
 				<div class="card" tabindex="1"> <img src="images/tv/falconwintersoldier_s1.jpg"> <div class="card_name">The Falcon and The Winter Soldier</div> 
 				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 1</div>
+				</div>
+				<div class="card" tabindex="1"> <img src="images/tv/loki_s1.jpg"> <div class="card_name">Loki</div> 
+				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 1</div>
+				</div>
+				<div class="card" tabindex="1"> <img src="images/movies/blackwidow.jpg"> <div class="card_name">Black Widow</div> 
+				<div class="card_name_type">Movie</div>
+				</div>
+				<div class="card" tabindex="1"> <img src="images/tv/whatif_s1.jpg"> <div class="card_name">What If...?</div> 
+				<div class="card_name_type">TV Show</div> <div class="card_name_type">Season 1</div>
+				</div>
+				<div class="card" tabindex="1"> <img src="images/movies/shangchi.jpg"> <div class="card_name">Shang-Chi And The Legend Of The Ten Rings</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card nonms" tabindex="1"> <img src="images/movies/venom2.jpg"> <div class="card_name">Venom: Let There Be Carnage</div> 
+				<div class="card_name_type">Movie</div>  
+				</div>
+				<div class="card" tabindex="1"> <img src="images/movies/eternals.jpg"> <div class="card_name">Eternals</div> 
+				<div class="card_name_type">Movie</div>  
 				</div>
 			</div>
 		</div>
