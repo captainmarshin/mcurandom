@@ -10321,19 +10321,34 @@
     },
     "series": {
         "The Infinity Saga": {
-            "note": "All Marvel Studios movies from Phase One to Phase Three"
+            "note": "All Marvel Studios movies from Phase One to Phase Three",
+            "Movie_Name":{
+                
+            }
         },
         "The Multiverse Saga": {
-            "note": "All Marvel Studios movies and TV shows from Phase Four to Phase Six"
+            "note": "All Marvel Studios movies and TV shows from Phase Four to Phase Six",
+            "Movie_Name":{
+                
+            }
         },
         "Marvel Heroes": {
-            "note": "All ABC TV series"
+            "note": "All ABC TV series",
+            "Movie_Name":{
+                
+            }
         },
         "Young Adult": {
-            "note": "All Hulu and Freeform TV series"
+            "note": "All Hulu and Freeform TV series",
+            "Movie_Name":{
+                
+            }
         },
         "Adventure into Fear": {
-            "note": "Helstorm"
+            "note": "Helstorm",
+            "Movie_Name":{
+                
+            }
         },
         "Marvel Legacy Movies": {
             "note": "All movies based on Marvel Comics",
