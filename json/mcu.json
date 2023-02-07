@@ -10318,27 +10318,26 @@
     },
     "series": {
         "The Infinity Saga": {
-            "note": "All Marvel Studios movies from Phase One to Phase Three"
+            
         },
         "The Multiverse Saga": {
-            "note": "All Marvel Studios movies and TV shows from Phase Four to Phase Six"
+            
         },
         "Marvel Heroes": {
-            "note": "All ABC TV series"
+            
         },
         "Young Adult": {
-            "note": "All Hulu and Freeform TV series"
+            
         },
         "Adventure into Fear": {
-            "note": "Helstorm"
+            
         },
         "Marvel Legacy Movies": {
-            "note": "All movies based on Marvel Comics",
             "Blade": {
-                "phase": "Phase Three",
+                "phase": "",
                 "release": " ",
-                "studio": "Marvel Studios",
-                "saga": "The Infinity Saga",
+                "studio": "New Line Cinema",
+                "saga": "Marvel Legacy Movies",
                 "order": " ",
                 "poster": "https://m.media-amazon.com/images/M/MV5BOTk2NDNjZWQtMGY0Mi00YTY2LWE5MzctMGRhZmNlYzljYTg5XkEyXkFqcGdeQXVyMTAyNjg4NjE0._V1_QL75_UY562_CR13",
                 "universe": "616",
@@ -10353,10 +10352,10 @@
                 "organizations": {}
             },
             "X-Men": {
-                "phase": "Phase Three",
+                "phase": "",
                 "release": " ",
-                "studio": "Marvel Studios",
-                "saga": "The Infinity Saga",
+                "studio": "FOX",
+                "saga": "Marvel Legacy Movies",
                 "order": " ",
                 "poster": "https://m.media-amazon.com/images/M/MV5BZmIyMDk5NGYtYjQ5NS00ZWQxLTg2YzQtZDk1ZmM4ZDBlN2E3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UX380_CR0",
                 "universe": "616",
@@ -10371,10 +10370,10 @@
                 "organizations": {}
             },
             "Blade 2": {
-                "phase": "Phase Three",
+                "phase": "",
                 "release": " ",
-                "studio": "Marvel Studios",
-                "saga": "The Infinity Saga",
+                "studio": "New Line Cinema",
+                "saga": "Marvel Legacy Movies",
                 "order": " ",
                 "poster": "https://m.media-amazon.com/images/M/MV5BOWVjZTIzNDYtNTBlNC00NTJjLTkzOTEtOTE0MjlhYzI2YTcyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UY209_CR0",
                 "universe": "616",
@@ -10391,7 +10390,7 @@
             "Spider-Man": {
                 "phase": "Phase Three",
                 "release": " ",
-                "studio": "Marvel Studios",
+                "studio": "Sony",
                 "saga": "The Infinity Saga",
                 "order": " ",
                 "poster": "https://m.media-amazon.com/images/M/MV5BZDEyN2NhMjgtMjdhNi00MmNlLWE5YTgtZGE4MzNjMTRlMGEwXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_UY209_CR0",
@@ -10409,7 +10408,7 @@
             "X-Men 2": {
                 "phase": "Phase Three",
                 "release": " ",
-                "studio": "Marvel Studios",
+                "studio": "FOX",
                 "saga": "The Infinity Saga",
                 "order": " ",
                 "poster": "https://m.media-amazon.com/images/M/MV5BNDk0NjYxMzIzOF5BMl5BanBnXkFtZTYwMTc1MjU3._V1_UY209_CR1",
@@ -10858,7 +10857,6 @@
             }
         },
         "Spider-Verse": {
-            "note": "All Movies and Animnates series + Spider-Man Appearence",
             "Spider-Man": {
                 "phase": "",
                 "release": " ",
