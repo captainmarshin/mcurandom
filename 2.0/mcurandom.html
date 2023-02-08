@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MCURandom</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+	<style type="text/css">
+
+		body{
+			padding: 0;
+			margin: 0;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.Series, .Legacy, .SpiderVerse, .InfinitySaga, .MultiverseSaga, .DefendersSaga, .MarvelHeroes, .YoungAdult, .AdventureIntoFear, .PhaseOne, .PhaseTwo, .PhaseThree, .PhaseFour, .PhaseFive, .PhaseSix{
+			/*display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+			grid-gap: 20px;
+			box-sizing: border-box;*/
+
+			margin-top: 10px;
+			margin-bottom: 40px;
+
+			width: 100%; 
+			height: auto;
+			box-sizing: border-box;
+			padding-left: 10px;
+			overflow-x: scroll; 
+			overflow-y: hidden; 
+			-ms-overflow-style: none; 
+			scrollbar-width: none; 
+			display: flex; 
+			flex-wrap: nowrap; 
+			-webkit-overflow-scrolling: touch; 
+
+	}
+
+	::-webkit-scrollbar { display: none; }
+
+		.Series_Block{
+			box-sizing: border-box;
+			flex-grow: 0;
+			width: 204px; /* Hide this when Grid mode*/
+			cursor: pointer;
+		}
+
+		.Series_Poster{
+			text-align: center;
+			box-sizing: border-box;
+			padding: 20px;
+		}
+
+		.Series_Poster img{
+			box-sizing: border-box;
+			object-fit: cover;
+			aspect-ratio: 1687 / 2500;
+			display: block;
+/*  			width: 100%;*/  /* Show this when Grid mode*/
+			width: 164px;  /* Hide this when Grid mode*/
+  			height: auto;
+			border-radius: 10px;
+			box-shadow: 0 7px 17px -8px rgba(0,0,0,.8);
+/*			transition: all .8s ease-out;*/
+		}
+
+		/*.Series_Block:hover > .Series_Poster img{
+			transform: scale(1.05);
+			transition: all 1.0s ease-in;
+		}*/
+
+		.Series_Title{
+			text-align: center;
+			box-sizing: border-box;
+			font-weight: bold;
+			font-size: 1em;
+			padding: 0 10px;
+			margin-bottom: 8px;
+		}
+
+		.Series_Phase{
+			margin-top: 4px;
+			text-align: center;
+			font-size: 0.8em;
+		}
+
+
+
+
+
+
+		.Category_Title{
+			font-size: 1.8em;
+			font-weight: bold;
+			margin-top: 20px;
+			margin-left: 30px;
+			margin-right: 30px;
+		}
+
+		.Category_Description{
+			margin-top: 10px;
+			font-size: 0.9em;
+			margin-left: 30px;
+			margin-right: 30px;
+		}
+
+
+
+
+
+		.header{
+			position: fixed;
+			top: 0;
+			background-color: #fff;
+			z-index: 1;
+			border-bottom: 1px solid #ddd;
+			width: 100%;
+		}
+
+		.header-content{
+			display: flex;
+			padding: 10px 30px;
+			align-items: center;
+		}
+
+		.header-logo{
+			flex: 50%;
+		}
+
+		.header-logo img{
+			/*margin-top: 15px;
+			margin-left: 30px;*/
+			height: 30px;
+			width: auto;
+		}
+
+		.header-menu{
+			flex: 50%;
+		}
+
+		.header-menu-item{
+			float: right;
+			width: 40px;
+			height: auto;
+			margin-right: 20px;
+			text-align: center;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		.header-menu-item:hover > .header-menu-item-icon{
+			background-color: #888;
+		}
+
+		.header-menu-item:first-child{
+			margin-right: 0;
+		}
+
+		.header-menu-item-icon{
+			width: 40px;
+			height: 40px;
+			color: #333;
+			background-color: #ddd;
+			text-align: center;
+			border-radius: 10px;
+			line-height: 3.3em;
+		}
+
+		.header-menu-title{
+			margin-top: 5px;
+			font-size: 0.7em;
+			text-align: center;
+		}
+
+		.filters{
+			display: none;
+			border-top: 1px solid #ddd;
+/*			border-bottom: 1px solid #eee;*/
+			overflow: scroll;
+		}
+
+
+		.filters-header{
+			border-bottom: 1px solid #ddd;
+		}
+
+		.filters-title{
+			margin: 10px 15px;
+			font-weight: bold;
+		}
+
+		.filters-clear{
+			float: right;
+			font-weight: normal;
+			font-size: 0.8em;
+			color: red;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+
+		.filters-content{
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-gap: 50px;
+			box-sizing: border-box;
+			margin: 50px 30px;
+		}
+
+		.filters-category{
+			flex-grow: 1;
+		}
+
+		.filters-cat-name{
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.filter{
+			font-size: 0.9em;
+			line-height: 1.7em;
+			position: relative;
+		}
+
+		.filter input{
+			float: right;
+			margin-right: 30px;
+		}
+
+		.filter span{
+			vertical-align: -3px;
+			font-size: 1.2em;
+			color: #888;
+		}
+
+
+		.content{
+			margin-top: 100px;
+		}
+
+
+
+
+
+		input[type="checkbox"] {
+			-webkit-appearance: none;
+			appearance: none;
+			background-color: #fff;
+			margin: 0;
+			font: inherit;
+		  	color: red;
+		  	width: 1.15em;
+		  	height: 1.15em;
+		  	border: 0.15em solid currentColor;
+		  	border-radius: 0.15em;
+		  	transform: translateY(-0.075em);
+		  	display: grid;
+  			place-content: center;
+		}
+
+		input[type="checkbox"]::before {
+		  	content: "";
+		  	width: 0.65em;
+		  	height: 0.65em;
+		  	color: white;
+		  	border-radius: 5px;
+		  	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+		  	background-color: white;
+		}
+
+		input[type="checkbox"]:checked {
+		  	transform: scale(1);
+		  	background-color: red;
+		}
+
+		input[type="checkbox"]:checked::before {
+		  	transform: scale(1);
+		  	background-color: white;
+		}
+
+		input[type="checkbox"]:focus {
+		  	outline: max(2px, 0.15em) solid blue;
+		  	outline-offset: max(2px, 0.15em);
+		}
+
+		input[type="checkbox"]:disabled {
+		  	color: #ddd;
+		  	cursor: not-allowed;
+		}
+
+
+
+		/*.tooltip {
+		  position: relative;
+		  display: inline-block;
+		  border-bottom: 1px dotted black;
+		}
+
+		.tooltip .tooltiptext {
+		  visibility: hidden;
+		  width: 120px;
+		  background-color: black;
+		  color: #fff;
+		  text-align: center;
+		  border-radius: 6px;
+		  padding: 5px 0;
+		  position: absolute;
+		  z-index: 1;
+		  bottom: 150%;
+		  left: 50%;
+		  margin-left: -60px;
+		}
+
+		.tooltip .tooltiptext::after {
+		  content: "";
+		  position: absolute;
+		  top: 100%;
+		  left: 50%;
+		  margin-left: -5px;
+		  border-width: 5px;
+		  border-style: solid;
+		  border-color: black transparent transparent transparent;
+		}
+
+		.tooltip:hover .tooltiptext {
+		  visibility: visible;
+		}*/
+
+
+		.tooltip {
+		  width: 100%;
+		  background-color: rgba(33, 33, 33, .9);
+		  color: #fff;
+		  text-align: center;
+		  border-radius: 6px;
+		  padding: 10px;
+		  line-height: 1.3em;
+		  position: relative;
+		  display: none;
+		  right: 0;
+		  box-sizing: border-box;
+		  font-size: 0.8em;
+		}
+
+/*		.tooltip::after {
+		  content: " ";
+  		  position: absolute;
+  		  top: 50%;
+  		  right: 100%;
+  	      margin-top: -5px;
+  		  border-width: 5px;
+  			border-style: solid;
+  			border-color: transparent #555 transparent transparent;
+		}*/
+
+		.tooltip {
+		  z-index: 1;
+		  position: absolute;
+		}
+
+		.help {
+		  cursor: pointer;
+		}
+
+		.help:hover {
+		  color: red;
+		}
+
+		.help:hover+.tooltip {
+		  display: block;
+		}
+
+		.tooltip:hover {
+		  display: block;
+		}
+
+
+		.footer{
+			border-top: 1px solid #ddd;
+			height: 400px;
+		}
+
+
+	</style>
+
+	<script type="text/javascript">
+		$.getJSON('https://mcurandom.com/json/mcu.json', function(data) {
+			var keys = Object.keys(data['movies']);
+			
+			$.each(data['movies'], function (index, value) {
+
+				$(".Series").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+
+			$.each(data['oneshots'], function (index, value) {
+
+				$(".Series").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+			$.each(data['webseries'], function (index, value) {
+
+				$(".Series").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+			$.each(data['tv'], function (index, value) {
+
+				$(".Series").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+			$.each(data['special'], function (index, value) {
+
+				$(".Series").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+
+			$.each(data['series']['Marvel Legacy Movies'], function (index, value) {
+
+				$(".Legacy").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+
+			$.each(data['series']['Spider-Verse'], function (index, value) {
+
+				$(".SpiderVerse").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+
+			$.each(data['movies'], function (index, value) {
+
+				if (value.saga == "The Infinity Saga") {
+					$(".InfinitySaga").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+
+			$.each(data['movies'], function (index, value) {
+
+				if (value.saga == "The Multiverse Saga") {
+					$(".MultiverseSaga").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+
+			$.each(data['movies'], function (index, value) {
+
+				if (value.phase == "Phase One") {
+					$(".PhaseOne").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+			});
+
+
+			$.each(data['movies'], function (index, value) {
+
+				if (value.phase == "Phase Two") {
+					$(".PhaseTwo").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+			});
+
+
+			$.each(data['movies'], function (index, value) {
+
+				if (value.phase == "Phase Three") {
+					$(".PhaseThree").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+			});
+
+			$.each(data['movies'], function (index, value) {
+
+				if (value.phase == "Phase Four") {
+					$(".PhaseFour").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+			});
+
+			$.each(data['movies'], function (index, value) {
+
+				if (value.phase == "Phase Five") {
+					$(".PhaseFive").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+			});
+
+			$.each(data['movies'], function (index, value) {
+
+				if (value.phase == "Phase Six") {
+					$(".PhaseSix").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+			});
+
+
+			$.each(data['tv'], function (index, value) {
+
+				if (value.saga == "The Defenders Saga") {
+					$(".DefendersSaga").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+
+			$.each(data['tv'], function (index, value) {
+
+				if (value.saga == "Marvel Heroes") {
+					$(".MarvelHeroes").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+
+			$.each(data['tv'], function (index, value) {
+
+				if (value.saga == "Young Adult Series") {
+					$(".YoungAdult").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+
+			$.each(data['tv'], function (index, value) {
+
+				if (value.saga == "Adventure into Fear") {
+					$(".AdventureIntoFear").append('<div class="Series_Block"><div class="Series_Poster"><img src="' + value.poster + '"></div><div class="Series_Title">' + index + '</div><div class="Series_Phase">' + value.phase + '</div><div class="Series_Phase">' + value.studio + '</div><div class="Series_Phase">' + value.saga + '</div>');
+				}
+
+				// <div class="Series_Block">
+				// <div class="Series_Poster"><img src="' + value.poster + '"></div>
+				// <div class="Series_Title">' + index + '</div>
+				// <div class="Series_Title">' + value.phase + '</div>
+				// <div class="Series_Title">' + value.studio + '</div>
+				// <div class="Series_Title">' + value.saga + '</div>
+			});
+
+
+		})
+
+		
+
+		// Function to open/hide filters menu
+
+		$(document).ready(function () {
+		    $("#button-filters").click(function () {
+		        $("#filters").toggle(function () {
+		        	$(this).animate({ 
+					     // style change
+					   }, 500);
+					   },
+					   function() {
+					   $(this).animate({ 
+					     // style change back
+					   }, 500);
+		        });
+		    });
+		});
+
+
+	</script>
+
+
+	<div class="header">
+
+		<div class="header-content">
+			<div class="header-logo"><img src="mcurandom_logo.svg"></div>
+			<div class="header-menu">
+				<div class="header-menu-item">
+					<div class="header-menu-item-icon"><span class="material-icons">info</span></div>
+					<div class="header-menu-title">About</div>
+				</div>
+				<div id="button-filters" class="header-menu-item">
+					<div class="header-menu-item-icon"><span class="material-icons">tune</span></div>
+					<div class="header-menu-title">Filters</div>
+				</div>
+				<div class="header-menu-item">
+					<div class="header-menu-item-icon"><span class="material-icons">settings_brightness</span></div>
+					<div class="header-menu-title">Theme</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="filters" class="filters">
+			<!-- <div class="filters-header">
+				<div class="filters-title">Filters</div>
+			</div> -->
+
+			<div class="filters-content">
+
+				<div class="filters-category">
+					<div class="filters-cat-name">Showing options <span class="filters-clear">Clear filters</span></div>
+					<div class="filter">Inline mode <span class="material-icons help">help_outline</span> <div class="tooltip">Show all project cards in single line and scroll them left right.</div> <input type="checkbox"></div>
+					<div class="filter">Grid mode <span class="material-icons help">help_outline</span> <div class="tooltip">Show all projects cards in responsive grid, scroll page to see more.</div> <input type="checkbox"></div>
+					<div class="filter">Spoiler mode <span class="material-icons help">help_outline</span> <div class="tooltip">When uncheked you will see spoiler moments in info. When checked, spoiler will be blur.</div> <input disabled type="checkbox"></div>
+				</div>
+
+				<div class="filters-category">
+					<div class="filters-cat-name">Display options <span class="filters-clear">Clear filters</span></div>
+					<div class="filter">Display projects by series <span class="material-icons help">help_outline</span> <div class="tooltip">Categorize all projects by series</div><input checked type="checkbox"></div>
+					<div class="filter">Display projects by sagas <span class="material-icons help">help_outline</span> <div class="tooltip">Categorize all projects by sagas</div> <input type="checkbox"></div>
+					<div class="filter">Display Marvel Legacy Movies <span class="material-icons help">help_outline</span> <div class="tooltip">Marvel Legacy Movies - all movies that not join in MCU.</div> <input type="checkbox"></div>
+					<div class="filter">Display upcoming projects <span class="material-icons help">help_outline</span> <div class="tooltip">Show announced and upcoming projects.</div> <input type="checkbox"></div>
+					<div class="filter">Display animation projects <span class="material-icons help">help_outline</span> <div class="tooltip">Show animation and cartoons.</div> <input type="checkbox"></div>
+				</div>
+
+				<div class="filters-category">
+					<div class="filters-cat-name">Timeline <span class="filters-clear">Clear filters</span></div>
+					<div class="filter">Show projects by chronological order <span class="material-icons help">help_outline</span> <div class="tooltip">All projects will be shown in story chronological order.</div> <input type="checkbox"></div>
+					<div class="filter">Show projects by release date <span class="material-icons help">help_outline</span> <div class="tooltip">All projects will be sorted by US released date.</div> <input type="checkbox"></div>
+					<div class="filter">Detailed timeline <span class="material-icons help">help_outline</span> <div class="tooltip">When checked, TV shows episodes sorted by story chronological order</div> <input type="checkbox"></div>
+					<div class="filter">Timeline with Marvel Studios projects only <span class="material-icons help">help_outline</span> <div class="tooltip">Show only Marvel Studios projects</div> <input type="checkbox"></div>
+				</div>
+
+				<div class="filters-category">
+					<div class="filters-cat-name">Sagas <span class="filters-clear">Clear filters</span></div>
+					<div class="filter">The Infinity Saga <span class="material-icons help">help_outline</span> <div class="tooltip">The Infinity Saga contain 23 movies and tells about Thanos collection Infinity Stones</div> <input type="checkbox"></div>
+					<div class="filter">The Multiverse Saga <span class="material-icons help">help_outline</span> <div class="tooltip">The Multiverse Saga</div> <input type="checkbox"></div>
+					<div class="filter">The Defenders Saga <span class="material-icons help">help_outline</span> <div class="tooltip">The Defenders Saga</div> <input type="checkbox"></div>
+				</div>
+
+				<div class="filters-category">
+					<div class="filters-cat-name">Phases <span class="filters-clear">Clear filters</span></div>
+					<div class="filter">Phase One <input type="checkbox"></div>
+					<div class="filter">Phase Two <input type="checkbox"></div>
+					<div class="filter">Phase Three <input type="checkbox"></div>
+					<div class="filter">Phase Four <input type="checkbox"></div>
+					<div class="filter">Phase Five <input type="checkbox"></div>
+					<div class="filter">Phase Six <input type="checkbox"></div>
+				</div>
+
+				<div class="filters-category">
+					<div class="filters-cat-name">Studios <span class="filters-clear">Clear filters</span></div>
+					<div class="filter">Marvel Studios <input type="checkbox"></div>
+					<div class="filter">Sony <input type="checkbox"></div>
+					<div class="filter">ABC <input type="checkbox"></div>
+					<div class="filter">Netflix <input type="checkbox"></div>
+					<div class="filter">Hulu <input type="checkbox"></div>
+					<div class="filter">Freeform <input type="checkbox"></div>
+					<div class="filter">Fox <input type="checkbox"></div>
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+
+	<div class="content">
+		
+		<div class="Category_Title">Marvel Cinematic Univers</div>
+		<div class="Category_Description">The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe centered on a series of superhero films produced by Marvel Studios. The films are based on characters that appear in American comic books published by Marvel Comics. The franchise also includes television series, short films, digital series, and literature. The shared universe, much like the original Marvel Universe in comic books, was established by crossing over common plot elements, settings, cast, and characters.</div>
+		<div class="Series">
+
+		</div>
+
+
+		<div class="Category_Title">Phase One</div>
+		<div class="PhaseOne">
+
+
+		</div>
+
+
+		<div class="Category_Title">Phase Two</div>
+		<div class="PhaseTwo">
+
+
+		</div>
+
+		<div class="Category_Title">Phase Three</div>
+		<div class="PhaseThree">
+
+
+		</div>
+
+
+		<div class="Category_Title">Phase Four</div>
+		<div class="PhaseFour">
+
+
+		</div>
+
+
+		<div class="Category_Title">Phase Five</div>
+		<div class="PhaseFive">
+
+
+		</div>
+
+		<div class="Category_Title">Phase Six</div>
+		<div class="PhaseSix">
+
+
+		</div>
+
+
+		<div class="Category_Title">Marvel Legacy Movies</div>
+		<div class="Category_Description">The Marvel Legacy Movies is a all movies, that not includes in MCU. For now, some movies join in MCU as part of The Multiverse Saga.</div>
+		<div class="Legacy">
+
+
+		</div>
+
+		<div class="Category_Title">Spider-Verse</div>
+		<div class="Category_Description">The Spider-Verse features multiple alternative versions of Spider-Man in movies and animation. For now some projects join in MCU as part of The Multiverse Saga. MCU have own Spider-Man.</div>
+		<div class="SpiderVerse">
+
+
+		</div>
+
+
+		<div class="Category_Title">The Infinity Saga</div>
+		<div class="Category_Description">The Infinity Saga is a saga of films made up of the first twenty-three films of the Marvel Cinematic Universe, encompassing Phase One, Phase Two, and Phase Three. The saga began with Iron Man and concluded with Spider-Man: Far From Home. The saga gets its name from its prominent theme of the Infinity Stones, and Thanos' quest to collect them.</div>
+		<div class="InfinitySaga">
+
+
+		</div>
+
+
+		<div class="Category_Title">The Multiverse Saga</div>
+		<div class="Category_Description">The Multiverse Saga is a saga of films, television series, and television specials of the Marvel Cinematic Universe, encompassing Phase Four, Phase Five, and Phase Six. The saga began with WandaVision and will conclude with Avengers: Secret Wars. The saga gets its name from its prominent theme of the Multiverse.</div>
+		<div class="MultiverseSaga">
+
+
+		</div>
+
+
+		<div class="Category_Title">The Defenders Saga</div>
+		<div class="Category_Description">The Defenders Saga, also called Street-Level Heroes and Marvel Knights,[1] is a group of Marvel Television series originally released on Netflix, focused on the New York City vigilantes of the Marvel Cinematic Universe. It began with season one of Daredevil and concluded with season three of Jessica Jones.</div>
+		<div class="DefendersSaga">
+
+
+		</div>
+
+
+
+		<div class="Category_Title">Marvel Heroes</div>
+		<div class="Category_Description">Marvel Heroes is a group of Marvel Television series originally released on ABC, directly tying in with the Marvel Cinematic Universe films.</div>
+		<div class="MarvelHeroes">
+
+
+		</div>
+
+
+		<div class="Category_Title">Young Adult</div>
+		<div class="Category_Description">Young Adult is a group of Marvel Television series focused on teenage heroes of the Marvel Cinematic Universe.</div>
+		<div class="YoungAdult">
+
+
+		</div>
+
+
+		<div class="Category_Title">Adventure into Fear</div>
+		<div class="Category_Description">Adventure into Fear is a cancelled group of Marvel Television series, focused on horror-themed characters of the Marvel Cinematic Universe.</div>
+		<div class="AdventureIntoFear">
+
+
+		</div>
+
+	</div>
+
+
+	<!-- <script type="text/javascript">
+		$(window).on('load', function() {
+	    	$('img').css('opacity','1');
+	});
+	</script> -->
+
+	<div class="footer">
+		
+	</div>
+
+
+</body>
+</html>
